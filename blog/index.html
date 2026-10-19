@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog — needesign</title>
+<meta name="description" content="Artigos sobre branding, marketing, storytelling, tendências e comportamento de marca, pela equipe needesign.">
+<link rel="canonical" href="https://www.needesign.com.br/blog/">
+<meta name="theme-color" content="#06070B">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="needesign">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Blog — needesign">
+<meta property="og:description" content="Artigos sobre branding, marketing, storytelling, tendências e comportamento de marca, pela equipe needesign.">
+<meta property="og:url" content="https://www.needesign.com.br/blog/">
+<meta property="og:image" content="https://www.needesign.com.br/img/og-needesign.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/icon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&amp;family=Manrope:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#06070B}
+a{color:inherit}a:hover{color:#fff}
+.nb *{box-sizing:border-box}
+.nb h1,.nb h2,.nb h3{font-family:'Unbounded',sans-serif;margin:0;letter-spacing:-0.02em}
+.mono{font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:0.14em}
+.gridbg{position:absolute;inset:-80px;background-image:linear-gradient(rgba(255,255,255,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.05) 1px,transparent 1px);background-size:64px 64px;animation:gridmove 14s linear infinite;mask-image:radial-gradient(ellipse at 30% 30%,#000 20%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 30% 30%,#000 20%,transparent 70%);pointer-events:none}
+@keyframes gridmove{to{transform:translate3d(64px,64px,0)}}
+.word{display:inline-block;opacity:0;transform:translateY(50%);animation:wordin .9s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes wordin{to{opacity:1;transform:none}}
+.ghost{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 20px;border-radius:999px;border:1px solid rgba(255,255,255,0.22);text-decoration:none;font-size:15px;color:#E8EAF0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;background:var(--acc);color:#06070B;font-weight:700;text-decoration:none;font-size:16px;transition:transform .25s,box-shadow .25s}
+.btn:hover{color:#06070B;transform:translateY(-2px);box-shadow:0 12px 40px color-mix(in srgb,var(--acc) 45%,transparent)}
+.feat{position:relative;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:0;border-radius:28px;overflow:hidden;border:1px solid rgba(255,255,255,0.10);background:#0A0C12;text-decoration:none;color:#E8EAF0;transition:border-color .4s;opacity:0;animation:up .9s .3s cubic-bezier(.2,.8,.2,1) forwards}
+.feat:hover{border-color:var(--acc);color:#E8EAF0}
+.feat .fi{position:relative;min-height:420px;overflow:hidden}
+.feat .fi img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.feat:hover .fi img{transform:scale(1.06)}
+.feat .fb{display:flex;flex-direction:column;justify-content:center;gap:18px;padding:44px}
+@keyframes up{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+.bgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.post{display:flex;flex-direction:column;border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);background:#0A0C12;text-decoration:none;color:#E8EAF0;transition:border-color .35s,transform .35s;opacity:0;animation:up .8s cubic-bezier(.2,.8,.2,1) forwards}
+.post:hover{border-color:var(--acc);transform:translateY(-6px);color:#E8EAF0}
+.post .pi{position:relative;aspect-ratio:16/10;overflow:hidden}
+.post .pi img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.post:hover .pi img{transform:scale(1.07)}
+.post .pb{display:flex;flex-direction:column;gap:12px;padding:22px 22px 24px;flex:1}
+.ptag{align-self:flex-start;padding:5px 11px;border-radius:999px;background:color-mix(in srgb,var(--acc) 14%,transparent);color:var(--acc);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.ptitle{font-family:'Unbounded',sans-serif;font-weight:600;font-size:19px;line-height:1.3;color:#fff}
+.pex{font-size:15px;line-height:1.55;color:#9EA4B5;margin:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.pmeta{margin-top:auto;display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;color:#7A8094}
+.pread{display:inline-flex;align-items:center;gap:6px;font-weight:700;color:var(--acc);font-size:14px}
+@media (max-width:1000px){.bgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.feat{grid-template-columns:minmax(0,1fr)}.feat .fi{min-height:300px}}
+@media (max-width:760px){
+.bhero{padding:28px 20px 36px !important}
+.bhero h1{font-size:52px !important}
+.bmain{padding:0 20px 96px !important}
+.bgrid{grid-template-columns:minmax(0,1fr);gap:14px}
+.feat .fb{padding:26px}
+.feat .fb h2{font-size:26px !important}
+}
+@media (prefers-reduced-motion: reduce){.nb *{animation:none !important;transition:none !important;opacity:1 !important}}
+.wa-fab{position:fixed;right:24px;bottom:24px;z-index:45;display:flex;align-items:center;gap:0;height:60px;min-width:60px;padding:0;border-radius:999px;background:#25D366;color:#06301A;text-decoration:none;font-family:'Manrope',sans-serif;font-weight:700;font-size:15px;box-shadow:0 12px 32px rgba(37,211,102,.35);opacity:0;transform:translateY(20px) scale(.9);animation:wafab .6s 1s cubic-bezier(.2,.8,.2,1) forwards;transition:box-shadow .3s}
+.wa-fab:hover{color:#06301A;box-shadow:0 16px 44px rgba(37,211,102,.5)}
+.wa-fab .wa-ic{position:relative;flex:none;width:60px;height:60px;display:flex;align-items:center;justify-content:center}
+.wa-fab .wa-ic::before{content:'';position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;animation:wapulse 2.4s 2s ease-out infinite}
+.wa-fab .wa-tx{max-width:0;overflow:hidden;white-space:nowrap;transition:max-width .45s cubic-bezier(.2,.8,.2,1),padding .45s}
+.wa-fab:hover .wa-tx,.wa-fab:focus-visible .wa-tx{max-width:220px;padding-right:22px}
+@keyframes wafab{to{opacity:1;transform:none}}
+@keyframes wapulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+@media (max-width:760px){.wa-fab{right:16px;bottom:16px;height:56px;min-width:56px}.wa-fab .wa-ic{width:56px;height:56px}}
+@media (prefers-reduced-motion: reduce){.wa-fab{opacity:1;transform:none;animation:none}.wa-fab .wa-ic::before{animation:none;display:none}}
+</style>
+<script src="/js/site.js?v=20261019" defer></script>
+<script src="/js/morphdom.min.js?v=20261019" defer></script>
+<script src="/js/dc.js?v=20261019" defer></script>
+<script src="/js/pages/blog.js?v=20261019" defer></script>
+</head>
+<body>
+<template id="dc-template">
+<div class="nb" style="--acc: {{accent}}; background: #06070B; color: #E8EAF0; font-family: 'Manrope', sans-serif; min-height: 100vh; overflow-x: hidden">
+<header style="position: relative; z-index: 5; max-width: 1280px; margin: 0 auto; padding: 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="/" style="display: inline-flex; align-items: center; text-decoration: none"><img src="/img/needesign-logo.webp" alt="needesign — your vision, our branding" style="height: 40px; width: auto; display: block"></a>
+<a class="ghost" href="/"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="M11 6l-6 6 6 6"></path></svg>Voltar ao site</a>
+</header>
+<section class="bhero" style="position: relative; max-width: 1280px; margin: 0 auto; padding: 40px 24px 48px">
+<div class="gridbg" aria-hidden="true"></div>
+<div style="position: relative; display: flex; flex-direction: column; gap: 16px; max-width: 800px">
+<div class="mono word" style="font-size: 13px; color: {{accent}}">Blog needesign</div>
+<h1 style="font-size: 92px; line-height: .95; font-weight: 800; color: #fff"><span class="word" style="animation-delay: .08s">Ideias</span> <span class="word" style="animation-delay: .18s">que</span> <span class="word" style="animation-delay: .28s; color: {{accent}}">movem</span> <span class="word" style="animation-delay: .38s">marcas.</span></h1>
+<p class="word" style="animation-delay: .48s; margin: 0; font-size: 19px; line-height: 1.55; color: #B7BCCB">Branding, marketing e comportamento, com o olhar de quem constrói marcas todos os dias.</p>
+</div>
+</section>
+<main class="bmain" style="max-width: 1280px; margin: 0 auto; padding: 0 24px 140px; display: flex; flex-direction: column; gap: 40px">
+<a class="feat" href="{{feat.url}}">
+<div class="fi"><img src="{{feat.img}}" alt=""></div>
+<div class="fb">
+<span class="mono" style="font-size: 12px; color: {{accent}}">Mais recente · {{feat.tag}}</span>
+<h2 style="font-size: 34px; line-height: 1.15; color: #fff">{{feat.t}}</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #B7BCCB">{{feat.ex}}</p>
+<div class="pmeta"><span>Diego Farack</span><span>{{feat.date}}</span><span>{{feat.rt}}</span></div>
+<span class="pread">Ler artigo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"></path><path d="M8 7h9v9"></path></svg></span>
+</div>
+</a>
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px">
+<h2 style="font-size: 26px; color: #fff">Todos os artigos</h2>
+<span class="mono" style="font-size: 12px; color: #8A90A2">{{count}} artigos</span>
+</div>
+<div class="bgrid">
+<sc-for list="{{rest}}" as="p" hint-placeholder-count="6">
+<a class="post" href="{{p.url}}" style="animation-delay: {{p.delay}}">
+<div class="pi"><img src="{{p.img}}" alt="" loading="lazy"></div>
+<div class="pb">
+<span class="ptag">{{p.tag}}</span>
+<h3 class="ptitle">{{p.t}}</h3>
+<p class="pex">{{p.ex}}</p>
+<div class="pmeta"><span>{{p.date}}</span><span>{{p.rt}}</span></div>
+</div>
+</a>
+</sc-for>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; margin-top: 20px; padding: 36px; border-radius: 28px; border: 1px solid rgba(255,255,255,0.10); background: rgba(255,255,255,0.03)">
+<div style="display: flex; flex-direction: column; gap: 8px; max-width: 640px">
+<h2 style="font-size: 30px; color: #fff">Quer aplicar isso na sua marca?</h2>
+<span style="color: #B7BCCB; font-size: 17px; line-height: 1.5">Monte o seu plano e veja o investimento na hora.</span>
+</div>
+<a class="btn" href="/orcamento/">Monte seu plano</a>
+</div>
+</main>
+<a class="wa-fab" href="https://wa.me/5516996377918?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20needesign%20e%20quero%20conversar." aria-label="Conversar no WhatsApp">
+<span class="wa-ic" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path><path d="M9.5 9.5c0 2.5 2.5 5 5 5l1-1.2-1.8-.9-.7.7c-.9-.4-1.7-1.2-2.1-2.1l.7-.7-.9-1.8z"></path></svg></span>
+<span class="wa-tx">Fale com a gente</span>
+</a>
+</div>
+</x-dc>
+</template>
+<div id="app" data-prerendered>
+<div class="nb" style="--acc: #FD3029; background: #06070B; color: #E8EAF0; font-family: 'Manrope', sans-serif; min-height: 100vh; overflow-x: hidden">
+<header style="position: relative; z-index: 5; max-width: 1280px; margin: 0 auto; padding: 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="/" style="display: inline-flex; align-items: center; text-decoration: none"><img src="/img/needesign-logo.webp" alt="needesign — your vision, our branding" style="height: 40px; width: auto; display: block"></a>
+<a class="ghost" href="/"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="M11 6l-6 6 6 6"></path></svg>Voltar ao site</a>
+</header>
+<section class="bhero" style="position: relative; max-width: 1280px; margin: 0 auto; padding: 40px 24px 48px">
+<div class="gridbg" aria-hidden="true"></div>
+<div style="position: relative; display: flex; flex-direction: column; gap: 16px; max-width: 800px">
+<div class="mono word" style="font-size: 13px; color: #FD3029">Blog needesign</div>
+<h1 style="font-size: 92px; line-height: .95; font-weight: 800; color: #fff"><span class="word" style="animation-delay: .08s">Ideias</span> <span class="word" style="animation-delay: .18s">que</span> <span class="word" style="animation-delay: .28s; color: #FD3029">movem</span> <span class="word" style="animation-delay: .38s">marcas.</span></h1>
+<p class="word" style="animation-delay: .48s; margin: 0; font-size: 19px; line-height: 1.55; color: #B7BCCB">Branding, marketing e comportamento, com o olhar de quem constrói marcas todos os dias.</p>
+</div>
+</section>
+<main class="bmain" style="max-width: 1280px; margin: 0 auto; padding: 0 24px 140px; display: flex; flex-direction: column; gap: 40px">
+<a class="feat" href="/blog/a-forca-da-uniao-por-que-o-co-branding-e-a-estrategia-do-momento/">
+<div class="fi"><img src="/img/blog-01.webp" alt=""></div>
+<div class="fb">
+<span class="mono" style="font-size: 12px; color: #FD3029">Mais recente · Co-Branding</span>
+<h2 style="font-size: 34px; line-height: 1.15; color: #fff">A Força da União: Por que o Co-Branding é a Estratégia do Momento</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #B7BCCB">Em um mercado saturado, as marcas estão buscando novas maneiras de se destacarem, alcançarem novos públicos e fortalecerem sua imagem. E a resposta para muitos tem sido a colaboração.</p>
+<div class="pmeta"><span>Diego Farack</span><span>19 set. 2025</span><span>3 min de leitura</span></div>
+<span class="pread">Ler artigo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"></path><path d="M8 7h9v9"></path></svg></span>
+</div>
+</a>
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px">
+<h2 style="font-size: 26px; color: #fff">Todos os artigos</h2>
+<span class="mono" style="font-size: 12px; color: #8A90A2">12 artigos</span>
+</div>
+<div class="bgrid">
+
+<a class="post" href="/blog/como-a-nostalgia-se-tornou-a-tendencia-do-momento/" style="animation-delay: 0.45s">
+<div class="pi"><img src="/img/blog-02.webp" alt="" loading="lazy"></div>
+<div class="pb">
+<span class="ptag">Tendências</span>
+<h3 class="ptitle">Como a nostalgia se tornou a tendência do momento</h3>
+<p class="pex">O boom da cultura pop dos anos 80, 90 e 2000 nas plataformas de streaming e redes sociais pavimentou o caminho para que as marcas pudessem embarcar nessa onda.</p>
+<div class="pmeta"><span>11 set. 2025</span><span>2 min de leitura</span></div>
+</div>
+</a>
+
+<a class="post" href="/blog/a-magia-do-storytelling/" style="animation-delay: 0.51s">
+<div class="pi"><img src="/img/blog-03.webp" alt="" loading="lazy"></div>
+<div class="pb">
+<span class="ptag">Storytelling</span>
+<h3 class="ptitle">A Magia do Storytelling</h3>
+<p class="pex">Em um mercado saturado de informações e anúncios, simplesmente vender um produto ou serviço já não é suficiente. Para se destacar, uma marca precisa se conectar de verdade com seu público.</p>
+<div class="pmeta"><span>4 set. 2025</span><span>2 min de leitura</span></div>
+</div>
+</a>
+
+<a class="post" href="/blog/a-era-dos-filtros-acabou-por-que-a-autenticidade-e-a-nova-moeda-no-marketing/" style="animation-delay: 0.57s">
+<div class="pi"><img src="/img/blog-04.webp" alt="" loading="lazy"></div>
+<div class="pb">
+<span class="ptag">Creator Economy</span>
+<h3 class="ptitle">A era dos filtros acabou: por que a autenticidade é a nova moeda no marketing?</h3>
+<p class="pex">A busca pela autenticidade deu origem a um movimento chamado Creator Economy. Nele, a lógica do marketing de influência tradicional está sendo invertida.</p>
+<div class="pmeta"><span>27 ago. 2025</span><span>2 min de leitura</span></div>
+</div>
+</a>
+
+<a class="post" href="/blog/como-comunicar-o-valor-da-sua-marca-sem-falar-de-preco/" style="animation-delay: 0.63s">
+<div class="pi"><img src="/img/blog-05.webp" alt="" loading="lazy"></div>
+<div class="pb">
+<span class="ptag">Branding</span>
+<h3 class="ptitle">Como comunicar o valor da sua marca sem falar de preço</h3>
+<p class="pex">Se sua marca compete apenas pelo menor preço, ela entra em uma corrida que é quase impossível de vencer e, pior, desvaloriza o que você oferece.</p>
+<div class="pmeta"><span>22 ago. 2025</span><span>3 min de leitura</span></div>
+</div>
+</a>
+
+<a class="post" href="/blog/a-viralizacao-da-adultizacao-e-o-caso-felca/" style="animation-delay: 0.69s">
+<div class="pi"><img src="/img/blog-06.webp" alt="" loading="lazy"></div>
+<div class="pb">
+<span class="ptag">Comportamento</span>
+<h3 class="ptitle">A Viralização da "Adultização" e o Caso Felca</h3>
+<p class="pex">Um tema delicado ganhou as redes sociais e dominou as conversas: a adultização de crianças, e o papel das marcas nessa discussão.</p>
+<div class="pmeta"><span>14 ago. 2025</span><span>2 min de leitura</span></div>
+</div>
+</a>
+
+<a class="post" href="/blog/marketing-viral/" style="animation-delay: 0.75s">
+<div class="pi"><img src="/img/blog-07.webp" alt="" loading="lazy"></div>
+<div class="pb">
+<span class="ptag">Marketing viral</span>
+<h3 class="ptitle">Morango do Amor</h3>
+<p class="pex">A receita para o marketing viral perfeito: o que o morango coberto de caramelo vermelho que tomou as redes ensina às marcas.</p>
+<div class="pmeta"><span>7 ago. 2025</span><span>3 min de leitura</span></div>
+</div>
+</a>
+
+<a class="post" href="/blog/marketing-de-conteudo-visual/" style="animation-delay: 0.81s">
+<div class="pi"><img src="/img/blog-08.webp" alt="" loading="lazy"></div>
+<div class="pb">
+<span class="ptag">Conteúdo</span>
+<h3 class="ptitle">Marketing de Conteúdo Visual</h3>
+<p class="pex">No mundo digital de hoje, onde a atenção é um recurso escasso, a qualidade visual se tornou um diferencial inegável para as marcas.</p>
+<div class="pmeta"><span>29 jul. 2025</span><span>2 min de leitura</span></div>
+</div>
+</a>
+
+<a class="post" href="/blog/desvendando-o-branding/" style="animation-delay: 0.87s">
+<div class="pi"><img src="/img/blog-09.webp" alt="" loading="lazy"></div>
+<div class="pb">
+<span class="ptag">Branding</span>
+<h3 class="ptitle">Desvendando o Branding</h3>
+<p class="pex">Por que algumas marcas nos cativam instantaneamente, enquanto outras passam despercebidas? A resposta está no branding.</p>
+<div class="pmeta"><span>22 jul. 2025</span><span>4 min de leitura</span></div>
+</div>
+</a>
+
+<a class="post" href="/blog/o-futuro-do-marketing-com-ia/" style="animation-delay: 0.93s">
+<div class="pi"><img src="/img/blog-10.webp" alt="" loading="lazy"></div>
+<div class="pb">
+<span class="ptag">Inteligência artificial</span>
+<h3 class="ptitle">O Futuro do Marketing</h3>
+<p class="pex">Como a inteligência artificial está redefinindo a conexão entre marcas e consumidores.</p>
+<div class="pmeta"><span>17 jul. 2025</span><span>3 min de leitura</span></div>
+</div>
+</a>
+
+<a class="post" href="/blog/marcas-com-alma/" style="animation-delay: 0.99s">
+<div class="pi"><img src="/img/blog-11.webp" alt="" loading="lazy"></div>
+<div class="pb">
+<span class="ptag">Propósito</span>
+<h3 class="ptitle">Marcas com Alma</h3>
+<p class="pex">O consumidor moderno busca mais do que produtos e serviços: ele busca marcas que representem algo maior. É aqui que entra o branding com propósito.</p>
+<div class="pmeta"><span>11 jul. 2025</span><span>2 min de leitura</span></div>
+</div>
+</a>
+
+<a class="post" href="/blog/o-futuro-e-pessoal/" style="animation-delay: 1.05s">
+<div class="pi"><img src="/img/blog-12.webp" alt="" loading="lazy"></div>
+<div class="pb">
+<span class="ptag">Personalização</span>
+<h3 class="ptitle">O Futuro é Pessoal</h3>
+<p class="pex">A personalização moderna é entregar a mensagem certa, para a pessoa certa, no momento certo, através do canal certo.</p>
+<div class="pmeta"><span>11 jul. 2025</span><span>2 min de leitura</span></div>
+</div>
+</a>
+
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; margin-top: 20px; padding: 36px; border-radius: 28px; border: 1px solid rgba(255,255,255,0.10); background: rgba(255,255,255,0.03)">
+<div style="display: flex; flex-direction: column; gap: 8px; max-width: 640px">
+<h2 style="font-size: 30px; color: #fff">Quer aplicar isso na sua marca?</h2>
+<span style="color: #B7BCCB; font-size: 17px; line-height: 1.5">Monte o seu plano e veja o investimento na hora.</span>
+</div>
+<a class="btn" href="/orcamento/">Monte seu plano</a>
+</div>
+</main>
+<a class="wa-fab" href="https://wa.me/5516996377918?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20needesign%20e%20quero%20conversar." aria-label="Conversar no WhatsApp">
+<span class="wa-ic" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path><path d="M9.5 9.5c0 2.5 2.5 5 5 5l1-1.2-1.8-.9-.7.7c-.9-.4-1.7-1.2-2.1-2.1l.7-.7-.9-1.8z"></path></svg></span>
+<span class="wa-tx">Fale com a gente</span>
+</a>
+</div>
+
+</div>
+<noscript><p style="color:#fff;padding:24px;font-family:sans-serif">Ative o JavaScript para ver o site completo da needesign. Fale com a gente pelo WhatsApp: <a href="https://wa.me/5516996377918" style="color:#FD3029">(16) 99637-7918</a>.</p></noscript>
+</body>
+</html>

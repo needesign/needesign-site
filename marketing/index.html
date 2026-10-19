@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marketing, o que é? 4Ps e 7Ps — needesign</title>
+<meta name="description" content="Entenda o que é marketing e como os 4Ps e os 7Ps ajudam a estruturar a estratégia da sua marca.">
+<link rel="canonical" href="https://www.needesign.com.br/marketing/">
+<meta name="theme-color" content="#06070B">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="needesign">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Marketing, o que é? 4Ps e 7Ps — needesign">
+<meta property="og:description" content="Entenda o que é marketing e como os 4Ps e os 7Ps ajudam a estruturar a estratégia da sua marca.">
+<meta property="og:url" content="https://www.needesign.com.br/marketing/">
+<meta property="og:image" content="https://www.needesign.com.br/img/og-needesign.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/icon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&amp;family=Manrope:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#06070B}
+a{color:inherit}a:hover{color:#fff}
+.nm *{box-sizing:border-box}
+.nm h1,.nm h2,.nm h3,.nm h4{font-family:'Unbounded',sans-serif;margin:0;letter-spacing:-0.02em}
+.mono{font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:0.14em}
+.gridbg{position:absolute;inset:-80px;background-image:linear-gradient(rgba(255,255,255,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.05) 1px,transparent 1px);background-size:64px 64px;animation:gridmove 14s linear infinite;mask-image:radial-gradient(ellipse at 50% 30%,#000 20%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 50% 30%,#000 20%,transparent 70%);pointer-events:none}
+@keyframes gridmove{to{transform:translate3d(64px,64px,0)}}
+.word{display:inline-block;opacity:0;transform:translateY(50%);animation:wordin .9s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes wordin{to{opacity:1;transform:none}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;background:var(--acc);color:#06070B;font-weight:700;text-decoration:none;font-size:16px;border:0;font-family:inherit;cursor:pointer;transition:transform .25s,box-shadow .25s}
+.btn:hover{color:#06070B;transform:translateY(-2px);box-shadow:0 12px 40px color-mix(in srgb,var(--acc) 45%,transparent)}
+.ghost{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 22px;border-radius:999px;border:1px solid rgba(255,255,255,0.22);text-decoration:none;font-size:15px;color:#E8EAF0;background:transparent;font-family:inherit;cursor:pointer}
+.ghost.sm{min-height:44px}
+.seg{display:inline-flex;padding:5px;border-radius:999px;border:1px solid rgba(255,255,255,0.14);background:rgba(255,255,255,0.03)}
+.seg button{min-height:42px;padding:0 20px;border-radius:999px;border:0;background:transparent;color:#B7BCCB;font:inherit;font-size:14px;cursor:pointer;transition:background .3s,color .3s}
+.seg button.on{background:var(--acc);color:#06070B;font-weight:700}
+.prow{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px}
+.ptile{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:16px;min-height:200px;padding:18px;border-radius:20px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.03);color:#E8EAF0;font:inherit;text-align:left;cursor:pointer;overflow:hidden;transition:background .35s,border-color .35s,opacity .5s,transform .5s cubic-bezier(.2,.8,.2,1),filter .5s}
+.ptile:hover{border-color:rgba(255,255,255,0.35);transform:translateY(-4px)}
+.ptile .pl{font-family:'Unbounded',sans-serif;font-weight:800;font-size:56px;line-height:.9;color:transparent;-webkit-text-stroke:1.5px var(--acc);transition:color .35s}
+.ptile .pe{font-family:'Unbounded',sans-serif;font-weight:600;font-size:15px;color:#fff;line-height:1.2}
+.ptile .pp{font-size:13px;color:#8A90A2}
+.ptile.on{background:var(--acc);border-color:var(--acc)}
+.ptile.on .pl{color:#06070B;-webkit-text-stroke:0}
+.ptile.on .pe{color:#06070B}
+.ptile.on .pp{color:rgba(6,7,11,.7)}
+.ptile.off{opacity:.25;filter:grayscale(1);transform:scale(.96)}
+.ptile .new{position:absolute;top:12px;right:12px;padding:3px 8px;border-radius:999px;font-family:'JetBrains Mono',monospace;font-size:10px;background:rgba(255,255,255,0.1);color:#fff}
+.ppanel{display:flex;flex-wrap:wrap;gap:28px 48px;padding:32px;border-radius:24px;border:1px solid rgba(255,255,255,0.12);background:#0A0C12;animation:sw .5s cubic-bezier(.2,.8,.2,1) both}
+.ppanel.b{animation-name:sw2}
+@keyframes sw{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes sw2{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:12px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.03);font-size:14px;color:#D5D8E0;opacity:0;animation:chipin .45s cubic-bezier(.2,.8,.2,1) forwards}
+.chip::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--acc)}
+@keyframes chipin{from{opacity:0;transform:translateY(10px) scale(.95)}to{opacity:1;transform:none}}
+.path{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0}
+.pstep{position:relative;display:flex;flex-direction:column;gap:12px;padding-right:18px}
+.pstep .pd{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1.5px solid rgba(255,255,255,0.25);font-family:'Unbounded',sans-serif;font-weight:700;color:#fff;background:#06070B;position:relative;z-index:1}
+.pstep::before{content:'';position:absolute;left:52px;right:0;top:26px;height:1.5px;background:rgba(255,255,255,0.15)}
+.pstep:last-child::before{display:none}
+.pstep.last .pd{border-color:var(--acc);background:var(--acc);color:#06070B}
+.vs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.vcard{display:flex;flex-direction:column;gap:16px;padding:34px;border-radius:26px;border:1px solid rgba(255,255,255,0.10);background:rgba(255,255,255,0.03)}
+.vcard.acc{border-color:var(--acc);background:color-mix(in srgb,var(--acc) 7%,#06070B)}
+.bar{height:10px;border-radius:999px;background:rgba(255,255,255,0.08);overflow:hidden}
+.bar i{display:block;height:100%;border-radius:999px;background:var(--acc)}
+.ans{animation:sw .5s cubic-bezier(.2,.8,.2,1) both}
+@media (max-width:1000px){.prow{grid-template-columns:repeat(4,minmax(0,1fr))}.path{grid-template-columns:minmax(0,1fr);gap:20px}.pstep{flex-direction:row;align-items:center}.pstep::before{display:none}}
+@media (max-width:760px){
+.mhero{padding:28px 20px 40px !important}
+.mhero h1{font-size:44px !important}
+.mmain{padding:0 20px 96px !important;gap:80px !important}
+.prow{grid-template-columns:repeat(2,minmax(0,1fr))}
+.ptile{min-height:150px}
+.ptile .pl{font-size:40px}
+.vs{grid-template-columns:minmax(0,1fr)}
+.ppanel,.vcard{padding:22px}
+}
+@media (prefers-reduced-motion: reduce){.nm *{animation:none !important;transition:none !important;opacity:1 !important}}
+.wa-fab{position:fixed;right:24px;bottom:24px;z-index:45;display:flex;align-items:center;gap:0;height:60px;min-width:60px;padding:0;border-radius:999px;background:#25D366;color:#06301A;text-decoration:none;font-family:'Manrope',sans-serif;font-weight:700;font-size:15px;box-shadow:0 12px 32px rgba(37,211,102,.35);opacity:0;transform:translateY(20px) scale(.9);animation:wafab .6s 1s cubic-bezier(.2,.8,.2,1) forwards;transition:box-shadow .3s}
+.wa-fab:hover{color:#06301A;box-shadow:0 16px 44px rgba(37,211,102,.5)}
+.wa-fab .wa-ic{position:relative;flex:none;width:60px;height:60px;display:flex;align-items:center;justify-content:center}
+.wa-fab .wa-ic::before{content:'';position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;animation:wapulse 2.4s 2s ease-out infinite}
+.wa-fab .wa-tx{max-width:0;overflow:hidden;white-space:nowrap;transition:max-width .45s cubic-bezier(.2,.8,.2,1),padding .45s}
+.wa-fab:hover .wa-tx,.wa-fab:focus-visible .wa-tx{max-width:220px;padding-right:22px}
+@keyframes wafab{to{opacity:1;transform:none}}
+@keyframes wapulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+@media (max-width:760px){.wa-fab{right:16px;bottom:16px;height:56px;min-width:56px}.wa-fab .wa-ic{width:56px;height:56px}}
+@media (prefers-reduced-motion: reduce){.wa-fab{opacity:1;transform:none;animation:none}.wa-fab .wa-ic::before{animation:none;display:none}}
+</style>
+<script src="/js/site.js?v=20261019" defer></script>
+<script src="/js/morphdom.min.js?v=20261019" defer></script>
+<script src="/js/dc.js?v=20261019" defer></script>
+<script src="/js/pages/marketing.js?v=20261019" defer></script>
+</head>
+<body>
+<template id="dc-template">
+<div class="nm" style="--acc: {{accent}}; background: #06070B; color: #E8EAF0; font-family: 'Manrope', sans-serif; min-height: 100vh; overflow-x: hidden">
+<header style="position: relative; z-index: 5; max-width: 1280px; margin: 0 auto; padding: 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="/" style="display: inline-flex; align-items: center; text-decoration: none"><img src="/img/needesign-logo.webp" alt="needesign — your vision, our branding" style="height: 40px; width: auto; display: block"></a>
+<a class="ghost sm" href="/"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="M11 6l-6 6 6 6"></path></svg>Voltar ao site</a>
+</header>
+
+<section class="mhero" style="position: relative; max-width: 1280px; margin: 0 auto; padding: 40px 24px 64px">
+<div class="gridbg" aria-hidden="true"></div>
+<div style="position: relative; display: flex; flex-direction: column; gap: 20px; max-width: 900px">
+<div class="mono word" style="font-size: 13px; color: {{accent}}">Conceito</div>
+<h1 style="font-size: 88px; line-height: .98; font-weight: 800; color: #fff"><span class="word" style="animation-delay: .08s">Marketing…</span><br><span class="word" style="animation-delay: .25s">afinal,</span> <span class="word" style="animation-delay: .35s">o</span> <span class="word" style="animation-delay: .45s">que</span> <span class="word" style="animation-delay: .55s; color: {{accent}}">é?</span></h1>
+<p class="word" style="animation-delay: .7s; margin: 0; font-size: 20px; line-height: 1.6; color: #C9CDD8">Existe uma confusão muito grande sobre o marketing no ambiente empresarial. Para alguns, marketing é tudo o que é divulgação, como criação de artes e peças de promoção. Para outros, é confundido com práticas comerciais e vendas.</p>
+</div>
+</section>
+
+<main class="mmain" style="max-width: 1280px; margin: 0 auto; padding: 0 24px 140px; display: flex; flex-direction: column; gap: 112px">
+
+<section style="display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 760px">
+<span class="mono" style="font-size: 13px; color: {{accent}}">Marketing mix · Philip Kotler</span>
+<h2 style="font-size: 44px; line-height: 1.06; color: #fff">{{mixTitle}}</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #B7BCCB">Um conceito amplamente aceito para definir marketing é o dos 4Ps. Hoje ele está mais abrangente e é representado por 7Ps. Alterne entre os dois e clique em cada P para ver o que ele envolve.</p>
+</div>
+<div class="seg" role="group" aria-label="Modelo">
+<button type="button" class="{{seg4}}" aria-pressed="{{is4}}" onClick="{{set4}}">4Ps clássicos</button>
+<button type="button" class="{{seg7}}" aria-pressed="{{is7}}" onClick="{{set7}}">7Ps atuais</button>
+</div>
+</div>
+<div class="prow">
+<sc-for list="{{ps}}" as="p" hint-placeholder-count="7">
+<button type="button" class="{{p.cls}}" aria-pressed="{{p.pressed}}" onClick="{{p.pick}}" disabled="{{p.disabled}}">
+<sc-if value="{{p.isNew}}" hint-placeholder-val="{{ false }}"><span class="new">+ novo</span></sc-if>
+<span class="pl">P</span>
+<span style="display: flex; flex-direction: column; gap: 4px"><span class="pe">{{p.en}}</span><span class="pp">{{p.pt}}</span></span>
+</button>
+</sc-for>
+</div>
+<div class="{{panelCls}}" aria-live="polite">
+<div style="flex: 1 1 280px; display: flex; flex-direction: column; gap: 10px; max-width: 360px">
+<span class="mono" style="font-size: 12px; color: {{accent}}">P{{cur.num}} · {{cur.pt}}</span>
+<h3 style="font-size: 32px; color: #fff">{{cur.en}}</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.55; color: #B7BCCB">{{cur.d}}</p>
+</div>
+<div style="flex: 2 1 420px; display: flex; flex-wrap: wrap; align-content: flex-start; gap: 8px">
+<sc-for list="{{cur.items}}" as="it" hint-placeholder-count="6"><span class="chip" style="animation-delay: {{it.d}}">{{it.t}}</span></sc-for>
+</div>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 36px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 820px">
+<span class="mono" style="font-size: 13px; color: {{accent}}">Antes de divulgar</span>
+<h2 style="font-size: 44px; line-height: 1.06; color: #fff">A divulgação é a última etapa, não a primeira.</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #B7BCCB">Para chegar no momento de promover, são necessárias diversas etapas de definição. Quando elas são bem feitas, as peças ficam muito mais assertivas e geram resultados mais relevantes, porque estão alinhadas à estratégia da empresa.</p>
+</div>
+<div class="path">
+<div class="pstep"><span class="pd">01</span><span style="display: flex; flex-direction: column; gap: 4px"><h4 style="font-size: 18px; color: #fff">Produto</h4><span style="font-size: 14px; color: #8A90A2">O que você entrega</span></span></div>
+<div class="pstep"><span class="pd">02</span><span style="display: flex; flex-direction: column; gap: 4px"><h4 style="font-size: 18px; color: #fff">Marca</h4><span style="font-size: 14px; color: #8A90A2">Como você é percebido</span></span></div>
+<div class="pstep"><span class="pd">03</span><span style="display: flex; flex-direction: column; gap: 4px"><h4 style="font-size: 18px; color: #fff">Público</h4><span style="font-size: 14px; color: #8A90A2">Para quem você fala</span></span></div>
+<div class="pstep"><span class="pd">04</span><span style="display: flex; flex-direction: column; gap: 4px"><h4 style="font-size: 18px; color: #fff">Posicionamento</h4><span style="font-size: 14px; color: #8A90A2">Onde você se coloca</span></span></div>
+<div class="pstep last"><span class="pd">05</span><span style="display: flex; flex-direction: column; gap: 4px"><h4 style="font-size: 18px; color: #fff">Promoção</h4><span style="font-size: 14px; color: #8A90A2">Aí sim, divulgar</span></span></div>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 820px">
+<span class="mono" style="font-size: 13px; color: {{accent}}">A diferença</span>
+<h2 style="font-size: 44px; line-height: 1.06; color: #fff">Agência de marketing não é agência de publicidade.</h2>
+</div>
+<div class="vs">
+<div class="vcard">
+<span class="mono" style="font-size: 12px; color: #8A90A2">Agência de publicidade</span>
+<h3 style="font-size: 26px; color: #fff">Foca na promoção.</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #B7BCCB">Concentra o trabalho em divulgar o produto ou serviço, o último dos Ps.</p>
+<div style="display: flex; flex-direction: column; gap: 8px"><span class="mono" style="font-size: 11px; color: #8A90A2">Cobertura do mix · 1 de 7</span><div class="bar"><i style="width: 14%"></i></div></div>
+</div>
+<div class="vcard acc">
+<span class="mono" style="font-size: 12px; color: {{accent}}">Agência de marketing · needesign</span>
+<h3 style="font-size: 26px; color: #fff">Cuida de todas as etapas.</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #C9CDD8">Um trabalho muito mais amplo e complexo: produto, marca, público, posicionamento e, por fim, a promoção.</p>
+<div style="display: flex; flex-direction: column; gap: 8px"><span class="mono" style="font-size: 11px; color: {{accent}}">Cobertura do mix · 7 de 7</span><div class="bar"><i style="width: 100%"></i></div></div>
+</div>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 26px; padding: 64px 28px; border-radius: 32px; border: 1px solid rgba(255,255,255,0.10); background: rgba(255,255,255,0.03)">
+<span class="mono" style="font-size: 13px; color: {{accent}}">E você?</span>
+<h2 style="font-size: 44px; line-height: 1.1; color: #fff; max-width: 860px">Sua empresa precisa de uma agência de marketing ou apenas do serviço de promoção?</h2>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px">
+<button type="button" class="btn" onClick="{{ansMkt}}">Preciso de marketing completo</button>
+<button type="button" class="ghost" onClick="{{ansPromo}}">Só preciso de promoção</button>
+</div>
+<sc-if value="{{hasAns}}" hint-placeholder-val="{{ false }}">
+<div class="ans" style="display: flex; flex-direction: column; align-items: center; gap: 16px; max-width: 640px">
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #D5D8E0">{{ansText}}</p>
+<a class="btn" href="{{ansHref}}">{{ansCta}}</a>
+</div>
+</sc-if>
+</section>
+</main>
+<a class="wa-fab" href="https://wa.me/5516996377918?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20needesign%20e%20quero%20conversar." target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
+<span class="wa-ic" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path><path d="M9.5 9.5c0 2.5 2.5 5 5 5l1-1.2-1.8-.9-.7.7c-.9-.4-1.7-1.2-2.1-2.1l.7-.7-.9-1.8z"></path></svg></span>
+<span class="wa-tx">Fale com a gente</span>
+</a>
+</div>
+</x-dc>
+</template>
+<div id="app" data-prerendered>
+<div class="nm" style="--acc: #FD3029; background: #06070B; color: #E8EAF0; font-family: 'Manrope', sans-serif; min-height: 100vh; overflow-x: hidden">
+<header style="position: relative; z-index: 5; max-width: 1280px; margin: 0 auto; padding: 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="/" style="display: inline-flex; align-items: center; text-decoration: none"><img src="/img/needesign-logo.webp" alt="needesign — your vision, our branding" style="height: 40px; width: auto; display: block"></a>
+<a class="ghost sm" href="/"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="M11 6l-6 6 6 6"></path></svg>Voltar ao site</a>
+</header>
+
+<section class="mhero" style="position: relative; max-width: 1280px; margin: 0 auto; padding: 40px 24px 64px">
+<div class="gridbg" aria-hidden="true"></div>
+<div style="position: relative; display: flex; flex-direction: column; gap: 20px; max-width: 900px">
+<div class="mono word" style="font-size: 13px; color: #FD3029">Conceito</div>
+<h1 style="font-size: 88px; line-height: .98; font-weight: 800; color: #fff"><span class="word" style="animation-delay: .08s">Marketing…</span><br><span class="word" style="animation-delay: .25s">afinal,</span> <span class="word" style="animation-delay: .35s">o</span> <span class="word" style="animation-delay: .45s">que</span> <span class="word" style="animation-delay: .55s; color: #FD3029">é?</span></h1>
+<p class="word" style="animation-delay: .7s; margin: 0; font-size: 20px; line-height: 1.6; color: #C9CDD8">Existe uma confusão muito grande sobre o marketing no ambiente empresarial. Para alguns, marketing é tudo o que é divulgação, como criação de artes e peças de promoção. Para outros, é confundido com práticas comerciais e vendas.</p>
+</div>
+</section>
+
+<main class="mmain" style="max-width: 1280px; margin: 0 auto; padding: 0 24px 140px; display: flex; flex-direction: column; gap: 112px">
+
+<section style="display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 760px">
+<span class="mono" style="font-size: 13px; color: #FD3029">Marketing mix · Philip Kotler</span>
+<h2 style="font-size: 44px; line-height: 1.06; color: #fff">Os 7Ps do marketing.</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #B7BCCB">Um conceito amplamente aceito para definir marketing é o dos 4Ps. Hoje ele está mais abrangente e é representado por 7Ps. Alterne entre os dois e clique em cada P para ver o que ele envolve.</p>
+</div>
+<div class="seg" role="group" aria-label="Modelo">
+<button type="button" class="" aria-pressed="false" data-dcev="click:0">4Ps clássicos</button>
+<button type="button" class="on" aria-pressed="true" data-dcev="click:1">7Ps atuais</button>
+</div>
+</div>
+<div class="prow">
+
+<button type="button" class="ptile on" aria-pressed="true" data-dcev="click:2">
+
+<span class="pl">P</span>
+<span style="display: flex; flex-direction: column; gap: 4px"><span class="pe">Product</span><span class="pp">Produto</span></span>
+</button>
+
+<button type="button" class="ptile" aria-pressed="false" data-dcev="click:3">
+
+<span class="pl">P</span>
+<span style="display: flex; flex-direction: column; gap: 4px"><span class="pe">Promotion</span><span class="pp">Promoção</span></span>
+</button>
+
+<button type="button" class="ptile" aria-pressed="false" data-dcev="click:4">
+
+<span class="pl">P</span>
+<span style="display: flex; flex-direction: column; gap: 4px"><span class="pe">Price</span><span class="pp">Preço</span></span>
+</button>
+
+<button type="button" class="ptile" aria-pressed="false" data-dcev="click:5">
+
+<span class="pl">P</span>
+<span style="display: flex; flex-direction: column; gap: 4px"><span class="pe">Place</span><span class="pp">Praça</span></span>
+</button>
+
+<button type="button" class="ptile" aria-pressed="false" data-dcev="click:6">
+<span class="new">+ novo</span>
+<span class="pl">P</span>
+<span style="display: flex; flex-direction: column; gap: 4px"><span class="pe">People</span><span class="pp">Pessoas</span></span>
+</button>
+
+<button type="button" class="ptile" aria-pressed="false" data-dcev="click:7">
+<span class="new">+ novo</span>
+<span class="pl">P</span>
+<span style="display: flex; flex-direction: column; gap: 4px"><span class="pe">Process</span><span class="pp">Processos</span></span>
+</button>
+
+<button type="button" class="ptile" aria-pressed="false" data-dcev="click:8">
+<span class="new">+ novo</span>
+<span class="pl">P</span>
+<span style="display: flex; flex-direction: column; gap: 4px"><span class="pe">Physical evidence</span><span class="pp">Evidências físicas</span></span>
+</button>
+
+</div>
+<div class="ppanel" aria-live="polite">
+<div style="flex: 1 1 280px; display: flex; flex-direction: column; gap: 10px; max-width: 360px">
+<span class="mono" style="font-size: 12px; color: #FD3029">P1 · Produto</span>
+<h3 style="font-size: 32px; color: #fff">Product</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.55; color: #B7BCCB">O que você oferece e como isso é percebido.</p>
+</div>
+<div style="flex: 2 1 420px; display: flex; flex-wrap: wrap; align-content: flex-start; gap: 8px">
+<span class="chip" style="animation-delay: 0.00s">Qualidade</span><span class="chip" style="animation-delay: 0.04s">Imagem</span><span class="chip" style="animation-delay: 0.08s">Branding</span><span class="chip" style="animation-delay: 0.12s">Recursos</span><span class="chip" style="animation-delay: 0.16s">Variações</span><span class="chip" style="animation-delay: 0.20s">Mix</span><span class="chip" style="animation-delay: 0.24s">Suporte</span><span class="chip" style="animation-delay: 0.28s">Serviços ao usuário</span><span class="chip" style="animation-delay: 0.32s">Ocasiões de uso</span><span class="chip" style="animation-delay: 0.36s">Disponibilidade</span><span class="chip" style="animation-delay: 0.40s">Garantias</span>
+</div>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 36px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 820px">
+<span class="mono" style="font-size: 13px; color: #FD3029">Antes de divulgar</span>
+<h2 style="font-size: 44px; line-height: 1.06; color: #fff">A divulgação é a última etapa, não a primeira.</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #B7BCCB">Para chegar no momento de promover, são necessárias diversas etapas de definição. Quando elas são bem feitas, as peças ficam muito mais assertivas e geram resultados mais relevantes, porque estão alinhadas à estratégia da empresa.</p>
+</div>
+<div class="path">
+<div class="pstep"><span class="pd">01</span><span style="display: flex; flex-direction: column; gap: 4px"><h4 style="font-size: 18px; color: #fff">Produto</h4><span style="font-size: 14px; color: #8A90A2">O que você entrega</span></span></div>
+<div class="pstep"><span class="pd">02</span><span style="display: flex; flex-direction: column; gap: 4px"><h4 style="font-size: 18px; color: #fff">Marca</h4><span style="font-size: 14px; color: #8A90A2">Como você é percebido</span></span></div>
+<div class="pstep"><span class="pd">03</span><span style="display: flex; flex-direction: column; gap: 4px"><h4 style="font-size: 18px; color: #fff">Público</h4><span style="font-size: 14px; color: #8A90A2">Para quem você fala</span></span></div>
+<div class="pstep"><span class="pd">04</span><span style="display: flex; flex-direction: column; gap: 4px"><h4 style="font-size: 18px; color: #fff">Posicionamento</h4><span style="font-size: 14px; color: #8A90A2">Onde você se coloca</span></span></div>
+<div class="pstep last"><span class="pd">05</span><span style="display: flex; flex-direction: column; gap: 4px"><h4 style="font-size: 18px; color: #fff">Promoção</h4><span style="font-size: 14px; color: #8A90A2">Aí sim, divulgar</span></span></div>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 820px">
+<span class="mono" style="font-size: 13px; color: #FD3029">A diferença</span>
+<h2 style="font-size: 44px; line-height: 1.06; color: #fff">Agência de marketing não é agência de publicidade.</h2>
+</div>
+<div class="vs">
+<div class="vcard">
+<span class="mono" style="font-size: 12px; color: #8A90A2">Agência de publicidade</span>
+<h3 style="font-size: 26px; color: #fff">Foca na promoção.</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #B7BCCB">Concentra o trabalho em divulgar o produto ou serviço, o último dos Ps.</p>
+<div style="display: flex; flex-direction: column; gap: 8px"><span class="mono" style="font-size: 11px; color: #8A90A2">Cobertura do mix · 1 de 7</span><div class="bar"><i style="width: 14%"></i></div></div>
+</div>
+<div class="vcard acc">
+<span class="mono" style="font-size: 12px; color: #FD3029">Agência de marketing · needesign</span>
+<h3 style="font-size: 26px; color: #fff">Cuida de todas as etapas.</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #C9CDD8">Um trabalho muito mais amplo e complexo: produto, marca, público, posicionamento e, por fim, a promoção.</p>
+<div style="display: flex; flex-direction: column; gap: 8px"><span class="mono" style="font-size: 11px; color: #FD3029">Cobertura do mix · 7 de 7</span><div class="bar"><i style="width: 100%"></i></div></div>
+</div>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 26px; padding: 64px 28px; border-radius: 32px; border: 1px solid rgba(255,255,255,0.10); background: rgba(255,255,255,0.03)">
+<span class="mono" style="font-size: 13px; color: #FD3029">E você?</span>
+<h2 style="font-size: 44px; line-height: 1.1; color: #fff; max-width: 860px">Sua empresa precisa de uma agência de marketing ou apenas do serviço de promoção?</h2>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px">
+<button type="button" class="btn" data-dcev="click:9">Preciso de marketing completo</button>
+<button type="button" class="ghost" data-dcev="click:10">Só preciso de promoção</button>
+</div>
+
+</section>
+</main>
+<a class="wa-fab" href="https://wa.me/5516996377918?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20needesign%20e%20quero%20conversar." target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
+<span class="wa-ic" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path><path d="M9.5 9.5c0 2.5 2.5 5 5 5l1-1.2-1.8-.9-.7.7c-.9-.4-1.7-1.2-2.1-2.1l.7-.7-.9-1.8z"></path></svg></span>
+<span class="wa-tx">Fale com a gente</span>
+</a>
+</div>
+
+</div>
+<noscript><p style="color:#fff;padding:24px;font-family:sans-serif">Ative o JavaScript para ver o site completo da needesign. Fale com a gente pelo WhatsApp: <a href="https://wa.me/5516996377918" style="color:#FD3029">(16) 99637-7918</a>.</p></noscript>
+</body>
+</html>
