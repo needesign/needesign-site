@@ -22,7 +22,7 @@ const scroll = (dir) => () => { const w = document.getElementById('works'); if (
 const s = {
 num: pad(idx + 1), tag: s0.tag, lead: s0.lead, intro: s0.intro, price: s0.price, hasPrice: !!s0.price,
 nLower: s0.n.charAt(0).toLowerCase() + s0.n.slice(1),
-letters: s0.n.split('').map((c, j) => ({ c: c === ' ' ? ' ' : c, d: (j * 0.025).toFixed(3) + 's' })),
+words: (() => { let k = 0; return s0.n.split(' ').map((wd) => ({ letters: wd.split('').map((c) => ({ c, d: (k++ * 0.025).toFixed(3) + 's' })) })); })(),
 off: s0.off.map((o, j) => ({ t: o[0], x: o[1], num: pad(j + 1), d: (0.15 + j * 0.06).toFixed(2) + 's' })),
 offCount: s0.off.length,
 why: s0.why.map((t, j) => ({ t, num: pad(j + 1), d: (0.2 + j * 0.08).toFixed(2) + 's' })),

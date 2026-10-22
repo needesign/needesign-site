@@ -129,7 +129,8 @@ footer > div{flex-direction:column;align-items:flex-start !important;gap:14px !i
 .ccard .lg{position:absolute;left:36px;top:36px;width:84px;height:84px;border-radius:20px;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.35)}
 .ccard .lg img{width:100%;height:100%;object-fit:cover}
 .ccard .ctext{position:absolute;left:36px;right:36px;bottom:36px;display:flex;flex-direction:column;gap:14px}
-.ccard .cname{font-family:'Unbounded',sans-serif;font-weight:800;font-size:clamp(40px,5.6vw,84px);line-height:.95;letter-spacing:-0.03em;color:#fff;margin:0;display:flex;flex-wrap:wrap}
+.ccard .cname{font-family:'Unbounded',sans-serif;font-weight:800;font-size:clamp(40px,5.6vw,84px);line-height:.95;letter-spacing:-0.03em;color:#fff;margin:0}
+.cname .wd{display:inline-block;white-space:nowrap}
 .ch{display:inline-block;white-space:pre;opacity:.4;transform:translateY(40%);transition:opacity .5s,transform .6s cubic-bezier(.2,.8,.2,1)}
 .ccard.act .ch{opacity:1;transform:none}
 .ctag{display:inline-flex;align-items:center;padding:6px 12px;border-radius:999px;border:1px solid rgba(255,255,255,0.2);font-size:13px;color:#D5D8E0;background:rgba(6,7,11,0.4);backdrop-filter:blur(6px)}
@@ -168,10 +169,10 @@ footer > div{flex-direction:column;align-items:flex-start !important;gap:14px !i
 @media (max-width:760px){.to-top{bottom:84px !important}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "needesign", "url": "https://needesign.com.br/", "logo": "https://needesign.com.br/img/needesign-logo.webp", "image": "https://needesign.com.br/img/og-needesign.jpg", "description": "Agência de branding e marketing em Ribeirão Preto. Construção de marca, identidade visual, sites, redes sociais, tráfego pago e vídeo para marcas que querem crescer.", "telephone": "+55 16 99637-7918", "address": {"@type": "PostalAddress", "addressLocality": "Ribeirão Preto", "addressRegion": "SP", "addressCountry": "BR"}, "areaServed": "BR", "sameAs": ["https://www.instagram.com/needesign.ag/", "https://www.facebook.com/needesign.ag"]}</script>
-<script src="/js/site.js?v=202610221104" defer></script>
-<script src="/js/morphdom.min.js?v=202610221104" defer></script>
-<script src="/js/dc.js?v=202610221104" defer></script>
-<script src="/js/pages/index.js?v=202610221104" defer></script>
+<script src="/js/site.js?v=202610221115" defer></script>
+<script src="/js/morphdom.min.js?v=202610221115" defer></script>
+<script src="/js/dc.js?v=202610221115" defer></script>
+<script src="/js/pages/index.js?v=202610221115" defer></script>
 </head>
 <body>
 <template id="dc-template">
@@ -319,7 +320,7 @@ footer > div{flex-direction:column;align-items:flex-start !important;gap:14px !i
 <span class="lg"><img src="{{c.logo}}" alt="" loading="lazy"></span>
 <div class="ctext">
 <span class="mono" style="font-size: 12px; color: {{accent}}">{{c.num}} · {{c.sub}}</span>
-<h3 class="cname"><sc-for list="{{c.letters}}" as="l" hint-placeholder-count="8"><span class="ch" style="transition-delay: {{l.d}}">{{l.ch}}</span></sc-for></h3>
+<h3 class="cname"><sc-for list="{{c.words}}" as="w" hint-placeholder-count="2"><span class="wd"><sc-for list="{{w.letters}}" as="l" hint-placeholder-count="6"><span class="ch" style="transition-delay: {{l.d}}">{{l.ch}}</span></sc-for></span> </sc-for></h3>
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
 <sc-for list="{{c.tags}}" as="t" hint-placeholder-count="2"><span class="ctag">{{t}}</span></sc-for>
 <span class="cmore" style="margin-left: auto">Ver case <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></span>
@@ -531,7 +532,7 @@ footer > div{flex-direction:column;align-items:flex-start !important;gap:14px !i
 <span class="lg"><img src="/img/cherry-logo.webp" alt="" loading="lazy"></span>
 <div class="ctext">
 <span class="mono" style="font-size: 12px; color: #FD3029">01 · Marca de luxo para o público feminino</span>
-<h3 class="cname"><span class="ch" style="transition-delay: 0.00s">C</span><span class="ch" style="transition-delay: 0.03s">h</span><span class="ch" style="transition-delay: 0.06s">e</span><span class="ch" style="transition-delay: 0.09s">r</span><span class="ch" style="transition-delay: 0.12s">r</span><span class="ch" style="transition-delay: 0.15s">y</span><span class="ch" style="transition-delay: 0.18s">&nbsp;</span><span class="ch" style="transition-delay: 0.21s">C</span><span class="ch" style="transition-delay: 0.24s">l</span><span class="ch" style="transition-delay: 0.27s">u</span><span class="ch" style="transition-delay: 0.30s">b</span></h3>
+<h3 class="cname"><span class="wd"><span class="ch" style="transition-delay: 0.00s">C</span><span class="ch" style="transition-delay: 0.03s">h</span><span class="ch" style="transition-delay: 0.06s">e</span><span class="ch" style="transition-delay: 0.09s">r</span><span class="ch" style="transition-delay: 0.12s">r</span><span class="ch" style="transition-delay: 0.15s">y</span></span> <span class="wd"><span class="ch" style="transition-delay: 0.18s">C</span><span class="ch" style="transition-delay: 0.21s">l</span><span class="ch" style="transition-delay: 0.24s">u</span><span class="ch" style="transition-delay: 0.27s">b</span></span> </h3>
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
 <span class="ctag">Marca</span><span class="ctag">Embalagens</span>
 <span class="cmore" style="margin-left: auto">Ver case <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></span>
@@ -546,7 +547,7 @@ footer > div{flex-direction:column;align-items:flex-start !important;gap:14px !i
 <span class="lg"><img src="/img/healthmanager-logo.webp" alt="" loading="lazy"></span>
 <div class="ctext">
 <span class="mono" style="font-size: 12px; color: #FD3029">02 · Redesign · saúde ocupacional</span>
-<h3 class="cname"><span class="ch" style="transition-delay: 0.00s">H</span><span class="ch" style="transition-delay: 0.03s">e</span><span class="ch" style="transition-delay: 0.06s">a</span><span class="ch" style="transition-delay: 0.09s">l</span><span class="ch" style="transition-delay: 0.12s">t</span><span class="ch" style="transition-delay: 0.15s">h</span><span class="ch" style="transition-delay: 0.18s">&nbsp;</span><span class="ch" style="transition-delay: 0.21s">M</span><span class="ch" style="transition-delay: 0.24s">a</span><span class="ch" style="transition-delay: 0.27s">n</span><span class="ch" style="transition-delay: 0.30s">a</span><span class="ch" style="transition-delay: 0.33s">g</span><span class="ch" style="transition-delay: 0.36s">e</span><span class="ch" style="transition-delay: 0.39s">r</span></h3>
+<h3 class="cname"><span class="wd"><span class="ch" style="transition-delay: 0.00s">H</span><span class="ch" style="transition-delay: 0.03s">e</span><span class="ch" style="transition-delay: 0.06s">a</span><span class="ch" style="transition-delay: 0.09s">l</span><span class="ch" style="transition-delay: 0.12s">t</span><span class="ch" style="transition-delay: 0.15s">h</span></span> <span class="wd"><span class="ch" style="transition-delay: 0.18s">M</span><span class="ch" style="transition-delay: 0.21s">a</span><span class="ch" style="transition-delay: 0.24s">n</span><span class="ch" style="transition-delay: 0.27s">a</span><span class="ch" style="transition-delay: 0.30s">g</span><span class="ch" style="transition-delay: 0.33s">e</span><span class="ch" style="transition-delay: 0.36s">r</span></span> </h3>
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
 <span class="ctag">Marca</span><span class="ctag">Papelaria</span><span class="ctag">Brindes</span>
 <span class="cmore" style="margin-left: auto">Ver case <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></span>
@@ -561,7 +562,7 @@ footer > div{flex-direction:column;align-items:flex-start !important;gap:14px !i
 <span class="lg"><img src="/img/sixsens-logo.webp" alt="" loading="lazy"></span>
 <div class="ctext">
 <span class="mono" style="font-size: 12px; color: #FD3029">03 · Saúde por meio de exercícios físicos</span>
-<h3 class="cname"><span class="ch" style="transition-delay: 0.00s">S</span><span class="ch" style="transition-delay: 0.03s">i</span><span class="ch" style="transition-delay: 0.06s">x</span><span class="ch" style="transition-delay: 0.09s">&nbsp;</span><span class="ch" style="transition-delay: 0.12s">S</span><span class="ch" style="transition-delay: 0.15s">e</span><span class="ch" style="transition-delay: 0.18s">n</span><span class="ch" style="transition-delay: 0.21s">s</span></h3>
+<h3 class="cname"><span class="wd"><span class="ch" style="transition-delay: 0.00s">S</span><span class="ch" style="transition-delay: 0.03s">i</span><span class="ch" style="transition-delay: 0.06s">x</span></span> <span class="wd"><span class="ch" style="transition-delay: 0.09s">S</span><span class="ch" style="transition-delay: 0.12s">e</span><span class="ch" style="transition-delay: 0.15s">n</span><span class="ch" style="transition-delay: 0.18s">s</span></span> </h3>
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
 <span class="ctag">Marca</span><span class="ctag">Embalagens</span><span class="ctag">Papelaria</span>
 <span class="cmore" style="margin-left: auto">Ver case <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></span>
@@ -576,7 +577,7 @@ footer > div{flex-direction:column;align-items:flex-start !important;gap:14px !i
 <span class="lg"><img src="/img/growthflow-logo.webp" alt="" loading="lazy"></span>
 <div class="ctext">
 <span class="mono" style="font-size: 12px; color: #FD3029">04 · Rebranding</span>
-<h3 class="cname"><span class="ch" style="transition-delay: 0.00s">G</span><span class="ch" style="transition-delay: 0.03s">r</span><span class="ch" style="transition-delay: 0.06s">o</span><span class="ch" style="transition-delay: 0.09s">w</span><span class="ch" style="transition-delay: 0.12s">t</span><span class="ch" style="transition-delay: 0.15s">h</span><span class="ch" style="transition-delay: 0.18s">&nbsp;</span><span class="ch" style="transition-delay: 0.21s">F</span><span class="ch" style="transition-delay: 0.24s">l</span><span class="ch" style="transition-delay: 0.27s">o</span><span class="ch" style="transition-delay: 0.30s">w</span></h3>
+<h3 class="cname"><span class="wd"><span class="ch" style="transition-delay: 0.00s">G</span><span class="ch" style="transition-delay: 0.03s">r</span><span class="ch" style="transition-delay: 0.06s">o</span><span class="ch" style="transition-delay: 0.09s">w</span><span class="ch" style="transition-delay: 0.12s">t</span><span class="ch" style="transition-delay: 0.15s">h</span></span> <span class="wd"><span class="ch" style="transition-delay: 0.18s">F</span><span class="ch" style="transition-delay: 0.21s">l</span><span class="ch" style="transition-delay: 0.24s">o</span><span class="ch" style="transition-delay: 0.27s">w</span></span> </h3>
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
 <span class="ctag">Marca</span><span class="ctag">Papelaria</span>
 <span class="cmore" style="margin-left: auto">Ver case <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></span>
@@ -591,7 +592,7 @@ footer > div{flex-direction:column;align-items:flex-start !important;gap:14px !i
 <span class="lg"><img src="/img/anagodoy-logo.webp" alt="" loading="lazy"></span>
 <div class="ctext">
 <span class="mono" style="font-size: 12px; color: #FD3029">05 · Marca pessoal</span>
-<h3 class="cname"><span class="ch" style="transition-delay: 0.00s">A</span><span class="ch" style="transition-delay: 0.03s">n</span><span class="ch" style="transition-delay: 0.06s">a</span><span class="ch" style="transition-delay: 0.09s">&nbsp;</span><span class="ch" style="transition-delay: 0.12s">G</span><span class="ch" style="transition-delay: 0.15s">o</span><span class="ch" style="transition-delay: 0.18s">d</span><span class="ch" style="transition-delay: 0.21s">o</span><span class="ch" style="transition-delay: 0.24s">y</span></h3>
+<h3 class="cname"><span class="wd"><span class="ch" style="transition-delay: 0.00s">A</span><span class="ch" style="transition-delay: 0.03s">n</span><span class="ch" style="transition-delay: 0.06s">a</span></span> <span class="wd"><span class="ch" style="transition-delay: 0.09s">G</span><span class="ch" style="transition-delay: 0.12s">o</span><span class="ch" style="transition-delay: 0.15s">d</span><span class="ch" style="transition-delay: 0.18s">o</span><span class="ch" style="transition-delay: 0.21s">y</span></span> </h3>
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
 <span class="ctag">Marca</span><span class="ctag">Papelaria</span>
 <span class="cmore" style="margin-left: auto">Ver case <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></span>
@@ -606,7 +607,7 @@ footer > div{flex-direction:column;align-items:flex-start !important;gap:14px !i
 <span class="lg"><img src="/img/agodoy-logo.webp" alt="" loading="lazy"></span>
 <div class="ctext">
 <span class="mono" style="font-size: 12px; color: #FD3029">06 · Advocacia para startups</span>
-<h3 class="cname"><span class="ch" style="transition-delay: 0.00s">A</span><span class="ch" style="transition-delay: 0.03s">g</span><span class="ch" style="transition-delay: 0.06s">o</span><span class="ch" style="transition-delay: 0.09s">d</span><span class="ch" style="transition-delay: 0.12s">o</span><span class="ch" style="transition-delay: 0.15s">y</span></h3>
+<h3 class="cname"><span class="wd"><span class="ch" style="transition-delay: 0.00s">A</span><span class="ch" style="transition-delay: 0.03s">g</span><span class="ch" style="transition-delay: 0.06s">o</span><span class="ch" style="transition-delay: 0.09s">d</span><span class="ch" style="transition-delay: 0.12s">o</span><span class="ch" style="transition-delay: 0.15s">y</span></span> </h3>
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
 <span class="ctag">Marca</span><span class="ctag">Papelaria</span><span class="ctag">Ambientação</span>
 <span class="cmore" style="margin-left: auto">Ver case <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></span>
@@ -621,7 +622,7 @@ footer > div{flex-direction:column;align-items:flex-start !important;gap:14px !i
 <span class="lg"><img src="/img/lais-logo.webp" alt="" loading="lazy"></span>
 <div class="ctext">
 <span class="mono" style="font-size: 12px; color: #FD3029">07 · Marca pessoal · personal trainer</span>
-<h3 class="cname"><span class="ch" style="transition-delay: 0.00s">L</span><span class="ch" style="transition-delay: 0.03s">a</span><span class="ch" style="transition-delay: 0.06s">í</span><span class="ch" style="transition-delay: 0.09s">s</span><span class="ch" style="transition-delay: 0.12s">&nbsp;</span><span class="ch" style="transition-delay: 0.15s">F</span><span class="ch" style="transition-delay: 0.18s">a</span><span class="ch" style="transition-delay: 0.21s">c</span><span class="ch" style="transition-delay: 0.24s">h</span><span class="ch" style="transition-delay: 0.27s">i</span><span class="ch" style="transition-delay: 0.30s">n</span><span class="ch" style="transition-delay: 0.33s">e</span><span class="ch" style="transition-delay: 0.36s">l</span><span class="ch" style="transition-delay: 0.39s">l</span><span class="ch" style="transition-delay: 0.42s">i</span></h3>
+<h3 class="cname"><span class="wd"><span class="ch" style="transition-delay: 0.00s">L</span><span class="ch" style="transition-delay: 0.03s">a</span><span class="ch" style="transition-delay: 0.06s">í</span><span class="ch" style="transition-delay: 0.09s">s</span></span> <span class="wd"><span class="ch" style="transition-delay: 0.12s">F</span><span class="ch" style="transition-delay: 0.15s">a</span><span class="ch" style="transition-delay: 0.18s">c</span><span class="ch" style="transition-delay: 0.21s">h</span><span class="ch" style="transition-delay: 0.24s">i</span><span class="ch" style="transition-delay: 0.27s">n</span><span class="ch" style="transition-delay: 0.30s">e</span><span class="ch" style="transition-delay: 0.33s">l</span><span class="ch" style="transition-delay: 0.36s">l</span><span class="ch" style="transition-delay: 0.39s">i</span></span> </h3>
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
 <span class="ctag">Marca</span><span class="ctag">Brindes</span>
 <span class="cmore" style="margin-left: auto">Ver case <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></span>
@@ -636,7 +637,7 @@ footer > div{flex-direction:column;align-items:flex-start !important;gap:14px !i
 <span class="lg"><img src="/img/legaxis-logo.webp" alt="" loading="lazy"></span>
 <div class="ctext">
 <span class="mono" style="font-size: 12px; color: #FD3029">08 · Inovação no cenário jurídico</span>
-<h3 class="cname"><span class="ch" style="transition-delay: 0.00s">L</span><span class="ch" style="transition-delay: 0.03s">e</span><span class="ch" style="transition-delay: 0.06s">g</span><span class="ch" style="transition-delay: 0.09s">á</span><span class="ch" style="transition-delay: 0.12s">x</span><span class="ch" style="transition-delay: 0.15s">i</span><span class="ch" style="transition-delay: 0.18s">s</span></h3>
+<h3 class="cname"><span class="wd"><span class="ch" style="transition-delay: 0.00s">L</span><span class="ch" style="transition-delay: 0.03s">e</span><span class="ch" style="transition-delay: 0.06s">g</span><span class="ch" style="transition-delay: 0.09s">á</span><span class="ch" style="transition-delay: 0.12s">x</span><span class="ch" style="transition-delay: 0.15s">i</span><span class="ch" style="transition-delay: 0.18s">s</span></span> </h3>
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
 <span class="ctag">Marca</span><span class="ctag">Brindes</span>
 <span class="cmore" style="margin-left: auto">Ver case <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></span>
@@ -651,7 +652,7 @@ footer > div{flex-direction:column;align-items:flex-start !important;gap:14px !i
 <span class="lg"><img src="/img/salesrun-logo.webp" alt="" loading="lazy"></span>
 <div class="ctext">
 <span class="mono" style="font-size: 12px; color: #FD3029">09 · Rebranding · marca endossada</span>
-<h3 class="cname"><span class="ch" style="transition-delay: 0.00s">s</span><span class="ch" style="transition-delay: 0.03s">a</span><span class="ch" style="transition-delay: 0.06s">l</span><span class="ch" style="transition-delay: 0.09s">e</span><span class="ch" style="transition-delay: 0.12s">s</span><span class="ch" style="transition-delay: 0.15s">r</span><span class="ch" style="transition-delay: 0.18s">u</span><span class="ch" style="transition-delay: 0.21s">n</span></h3>
+<h3 class="cname"><span class="wd"><span class="ch" style="transition-delay: 0.00s">s</span><span class="ch" style="transition-delay: 0.03s">a</span><span class="ch" style="transition-delay: 0.06s">l</span><span class="ch" style="transition-delay: 0.09s">e</span><span class="ch" style="transition-delay: 0.12s">s</span><span class="ch" style="transition-delay: 0.15s">r</span><span class="ch" style="transition-delay: 0.18s">u</span><span class="ch" style="transition-delay: 0.21s">n</span></span> </h3>
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
 <span class="ctag">Marca</span><span class="ctag">Brindes</span>
 <span class="cmore" style="margin-left: auto">Ver case <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></span>
@@ -666,7 +667,7 @@ footer > div{flex-direction:column;align-items:flex-start !important;gap:14px !i
 <span class="lg"><img src="/img/vicente-logo.webp" alt="" loading="lazy"></span>
 <div class="ctext">
 <span class="mono" style="font-size: 12px; color: #FD3029">10 · Legal advisory &amp; litigation</span>
-<h3 class="cname"><span class="ch" style="transition-delay: 0.00s">V</span><span class="ch" style="transition-delay: 0.03s">i</span><span class="ch" style="transition-delay: 0.06s">c</span><span class="ch" style="transition-delay: 0.09s">e</span><span class="ch" style="transition-delay: 0.12s">n</span><span class="ch" style="transition-delay: 0.15s">t</span><span class="ch" style="transition-delay: 0.18s">e</span><span class="ch" style="transition-delay: 0.21s">&nbsp;</span><span class="ch" style="transition-delay: 0.24s">B</span><span class="ch" style="transition-delay: 0.27s">o</span><span class="ch" style="transition-delay: 0.30s">t</span><span class="ch" style="transition-delay: 0.33s">u</span><span class="ch" style="transition-delay: 0.36s">r</span><span class="ch" style="transition-delay: 0.39s">a</span></h3>
+<h3 class="cname"><span class="wd"><span class="ch" style="transition-delay: 0.00s">V</span><span class="ch" style="transition-delay: 0.03s">i</span><span class="ch" style="transition-delay: 0.06s">c</span><span class="ch" style="transition-delay: 0.09s">e</span><span class="ch" style="transition-delay: 0.12s">n</span><span class="ch" style="transition-delay: 0.15s">t</span><span class="ch" style="transition-delay: 0.18s">e</span></span> <span class="wd"><span class="ch" style="transition-delay: 0.21s">B</span><span class="ch" style="transition-delay: 0.24s">o</span><span class="ch" style="transition-delay: 0.27s">t</span><span class="ch" style="transition-delay: 0.30s">u</span><span class="ch" style="transition-delay: 0.33s">r</span><span class="ch" style="transition-delay: 0.36s">a</span></span> </h3>
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
 <span class="ctag">Marca</span><span class="ctag">Papelaria</span>
 <span class="cmore" style="margin-left: auto">Ver case <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></span>

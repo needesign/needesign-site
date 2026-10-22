@@ -60,7 +60,7 @@ href: '/portfolio/#case-' + c.id,
 aria: 'Ver case ' + c.name,
 vars: '--k: ' + (i + 1),
 cls: 'ccard' + (caseIdx === i ? ' act' : ''),
-letters: c.name.split('').map((ch, j) => ({ ch: ch === ' ' ? '\u00a0' : ch, d: (j * 0.03).toFixed(2) + 's' }))
+words: (() => { let k = 0; return c.name.split(' ').map((wd) => ({ letters: wd.split('').map((ch) => ({ ch, d: (k++ * 0.03).toFixed(2) + 's' })) })); })()
 }));
 return {
 cases,
