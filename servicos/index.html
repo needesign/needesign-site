@@ -67,6 +67,11 @@ a{color:inherit}a:hover{color:#fff}
 .work .wl{position:absolute;left:16px;top:16px;width:52px;height:52px;border-radius:14px;overflow:hidden;background:#fff}
 .work .wl img{width:100%;height:100%;object-fit:cover}
 .work .wtx{position:absolute;left:18px;right:18px;bottom:18px;display:flex;flex-direction:column;gap:4px}
+.work.vid{width:240px;height:426px}
+.work.vid img.wi{filter:brightness(.8)}
+.work.vid:hover img.wi{filter:brightness(.6)}
+.work .play{position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(6,7,11,.75);border:1.5px solid rgba(255,255,255,.7);color:#fff;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);transition:transform .35s,background .35s}
+.work:hover .play{transform:scale(1.12);background:var(--acc);border-color:var(--acc);color:#06070B}
 .pricebox{display:inline-flex;flex-direction:column;gap:4px;padding:16px 22px;border-radius:18px;border:1px solid color-mix(in srgb,var(--acc) 50%,transparent);background:color-mix(in srgb,var(--acc) 8%,transparent)}
 .carr{width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,0.22);background:transparent;color:#fff;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
 .carr:hover{border-color:var(--acc);color:var(--acc)}
@@ -78,20 +83,11 @@ a{color:inherit}a:hover{color:#fff}
 .why .wn{font-size:30px;min-width:56px}
 .why .wt{font-size:18px}
 .work{width:240px;height:300px}
+.work.vid{width:200px;height:356px}
 .offgrid{gap:12px}
 .off{padding:22px}
 }
 @media (prefers-reduced-motion: reduce){.ns *{animation:none !important;transition:none !important;opacity:1 !important;transform:none !important}}
-.wa-fab{position:fixed;right:24px;bottom:24px;z-index:45;display:flex;align-items:center;gap:0;height:60px;min-width:60px;padding:0;border-radius:999px;background:#25D366;color:#06301A;text-decoration:none;font-family:'Manrope',sans-serif;font-weight:700;font-size:15px;box-shadow:0 12px 32px rgba(37,211,102,.35);opacity:0;transform:translateY(20px) scale(.9);animation:wafab .6s 1s cubic-bezier(.2,.8,.2,1) forwards;transition:box-shadow .3s}
-.wa-fab:hover{color:#06301A;box-shadow:0 16px 44px rgba(37,211,102,.5)}
-.wa-fab .wa-ic{position:relative;flex:none;width:60px;height:60px;display:flex;align-items:center;justify-content:center}
-.wa-fab .wa-ic::before{content:'';position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;animation:wapulse 2.4s 2s ease-out infinite}
-.wa-fab .wa-tx{max-width:0;overflow:hidden;white-space:nowrap;transition:max-width .45s cubic-bezier(.2,.8,.2,1),padding .45s}
-.wa-fab:hover .wa-tx,.wa-fab:focus-visible .wa-tx{max-width:220px;padding-right:22px}
-@keyframes wafab{to{opacity:1;transform:none}}
-@keyframes wapulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
-@media (max-width:760px){.wa-fab{right:16px;bottom:16px;height:56px;min-width:56px}.wa-fab .wa-ic{width:56px;height:56px}}
-@media (prefers-reduced-motion: reduce){.wa-fab{opacity:1;transform:none;animation:none}.wa-fab .wa-ic::before{animation:none;display:none}}
 </style>
 <script src="/js/site.js?v=20261019" defer></script>
 <script src="/js/morphdom.min.js?v=20261019" defer></script>
@@ -164,7 +160,7 @@ a{color:inherit}a:hover{color:#fff}
 <sc-if value="{{s.hasWorks}}" hint-placeholder-val="{{ false }}">
 <div style="display: flex; flex-direction: column; gap: 24px">
 <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
-<h2 style="font-size: 40px; color: #fff">Trabalhos de {{s.nLower}}</h2>
+<div style="display: flex; flex-direction: column; gap: 8px"><h2 style="font-size: 40px; color: #fff">Trabalhos de {{s.nLower}}</h2><sc-if value="{{s.isVideo}}" hint-placeholder-val="{{ false }}"><span style="font-size: 15px; color: #9EA4B5">Toque em um vídeo para assistir no Instagram.</span></sc-if></div>
 <div style="display: flex; gap: 10px; align-items: center">
 <a class="ghost sm" href="/portfolio/">Ver portfólio</a>
 <button type="button" class="carr" aria-label="Anterior" onClick="{{worksPrev}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="M11 6l-6 6 6 6"></path></svg></button>
@@ -173,9 +169,10 @@ a{color:inherit}a:hover{color:#fff}
 </div>
 <div id="works" class="works">
 <sc-for list="{{s.works}}" as="k" hint-placeholder-count="4">
-<a class="work" href="{{k.href}}">
+<a class="{{k.cls}}" href="{{k.href}}" target="{{k.target}}" rel="noopener">
 <img class="wi" src="{{k.img}}" alt="" loading="lazy">
 <span class="wsh" aria-hidden="true"></span>
+<sc-if value="{{k.ext}}" hint-placeholder-val="{{ false }}"><span class="play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span></sc-if>
 <sc-if value="{{k.hasLogo}}" hint-placeholder-val="{{ false }}"><span class="wl"><img src="{{k.logo}}" alt="" loading="lazy"></span></sc-if>
 <span class="wtx"><span style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 20px">{{k.t}}</span><span style="font-size: 14px; color: #B7BCCB">{{k.s}}</span></span>
 </a>
@@ -197,10 +194,6 @@ a{color:inherit}a:hover{color:#fff}
 </div>
 </main>
 </div>
-<a class="wa-fab" href="https://wa.me/5516996377918?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20needesign%20e%20quero%20conversar." target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
-<span class="wa-ic" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path><path d="M9.5 9.5c0 2.5 2.5 5 5 5l1-1.2-1.8-.9-.7.7c-.9-.4-1.7-1.2-2.1-2.1l.7-.7-.9-1.8z"></path></svg></span>
-<span class="wa-tx">Fale com a gente</span>
-</a>
 </div>
 </x-dc>
 </template>
@@ -299,7 +292,7 @@ a{color:inherit}a:hover{color:#fff}
 
 <div style="display: flex; flex-direction: column; gap: 24px">
 <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
-<h2 style="font-size: 40px; color: #fff">Trabalhos de construção de marca</h2>
+<div style="display: flex; flex-direction: column; gap: 8px"><h2 style="font-size: 40px; color: #fff">Trabalhos de construção de marca</h2></div>
 <div style="display: flex; gap: 10px; align-items: center">
 <a class="ghost sm" href="/portfolio/">Ver portfólio</a>
 <button type="button" class="carr" aria-label="Anterior" data-dcev="click:8"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="M11 6l-6 6 6 6"></path></svg></button>
@@ -308,72 +301,82 @@ a{color:inherit}a:hover{color:#fff}
 </div>
 <div id="works" class="works">
 
-<a class="work" href="/portfolio/#case-cherry">
+<a class="work" href="/portfolio/#case-cherry" target="_self" rel="noopener">
 <img class="wi" src="/img/cherry-cover.webp" alt="" loading="lazy">
 <span class="wsh" aria-hidden="true"></span>
+
 <span class="wl"><img src="/img/cherry-logo.webp" alt="" loading="lazy"></span>
 <span class="wtx"><span style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 20px">Cherry Club</span><span style="font-size: 14px; color: #B7BCCB">Marca de luxo para o público feminino</span></span>
 </a>
 
-<a class="work" href="/portfolio/#case-healthmanager">
+<a class="work" href="/portfolio/#case-healthmanager" target="_self" rel="noopener">
 <img class="wi" src="/img/healthmanager-cover.webp" alt="" loading="lazy">
 <span class="wsh" aria-hidden="true"></span>
+
 <span class="wl"><img src="/img/healthmanager-logo.webp" alt="" loading="lazy"></span>
 <span class="wtx"><span style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 20px">Health Manager</span><span style="font-size: 14px; color: #B7BCCB">Redesign · saúde ocupacional</span></span>
 </a>
 
-<a class="work" href="/portfolio/#case-sixsens">
+<a class="work" href="/portfolio/#case-sixsens" target="_self" rel="noopener">
 <img class="wi" src="/img/sixsens-cover.webp" alt="" loading="lazy">
 <span class="wsh" aria-hidden="true"></span>
+
 <span class="wl"><img src="/img/sixsens-logo.webp" alt="" loading="lazy"></span>
 <span class="wtx"><span style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 20px">Six Sens</span><span style="font-size: 14px; color: #B7BCCB">Saúde por meio de exercícios físicos</span></span>
 </a>
 
-<a class="work" href="/portfolio/#case-growthflow">
+<a class="work" href="/portfolio/#case-growthflow" target="_self" rel="noopener">
 <img class="wi" src="/img/growthflow-cover.webp" alt="" loading="lazy">
 <span class="wsh" aria-hidden="true"></span>
+
 <span class="wl"><img src="/img/growthflow-logo.webp" alt="" loading="lazy"></span>
 <span class="wtx"><span style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 20px">Growth Flow</span><span style="font-size: 14px; color: #B7BCCB">Rebranding</span></span>
 </a>
 
-<a class="work" href="/portfolio/#case-anagodoy">
+<a class="work" href="/portfolio/#case-anagodoy" target="_self" rel="noopener">
 <img class="wi" src="/img/anagodoy-cover.webp" alt="" loading="lazy">
 <span class="wsh" aria-hidden="true"></span>
+
 <span class="wl"><img src="/img/anagodoy-logo.webp" alt="" loading="lazy"></span>
 <span class="wtx"><span style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 20px">Ana Godoy</span><span style="font-size: 14px; color: #B7BCCB">Marca pessoal</span></span>
 </a>
 
-<a class="work" href="/portfolio/#case-agodoy">
+<a class="work" href="/portfolio/#case-agodoy" target="_self" rel="noopener">
 <img class="wi" src="/img/agodoy-cover.webp" alt="" loading="lazy">
 <span class="wsh" aria-hidden="true"></span>
+
 <span class="wl"><img src="/img/agodoy-logo.webp" alt="" loading="lazy"></span>
 <span class="wtx"><span style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 20px">Agodoy</span><span style="font-size: 14px; color: #B7BCCB">Advocacia para startups</span></span>
 </a>
 
-<a class="work" href="/portfolio/#case-lais">
+<a class="work" href="/portfolio/#case-lais" target="_self" rel="noopener">
 <img class="wi" src="/img/lais-cover.webp" alt="" loading="lazy">
 <span class="wsh" aria-hidden="true"></span>
+
 <span class="wl"><img src="/img/lais-logo.webp" alt="" loading="lazy"></span>
 <span class="wtx"><span style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 20px">Laís Fachinelli</span><span style="font-size: 14px; color: #B7BCCB">Marca pessoal · personal trainer</span></span>
 </a>
 
-<a class="work" href="/portfolio/#case-legaxis">
+<a class="work" href="/portfolio/#case-legaxis" target="_self" rel="noopener">
 <img class="wi" src="/img/legaxis-cover.webp" alt="" loading="lazy">
 <span class="wsh" aria-hidden="true"></span>
+
 <span class="wl"><img src="/img/legaxis-logo.webp" alt="" loading="lazy"></span>
 <span class="wtx"><span style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 20px">Legáxis</span><span style="font-size: 14px; color: #B7BCCB">Inovação no cenário jurídico</span></span>
 </a>
 
-<a class="work" href="/portfolio/#case-salesrun">
+<a class="work" href="/portfolio/#case-salesrun" target="_self" rel="noopener">
 <img class="wi" src="/img/salesrun-cover.webp" alt="" loading="lazy">
 <span class="wsh" aria-hidden="true"></span>
+
 <span class="wl"><img src="/img/salesrun-logo.webp" alt="" loading="lazy"></span>
 <span class="wtx"><span style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 20px">salesrun</span><span style="font-size: 14px; color: #B7BCCB">Rebranding · marca endossada</span></span>
 </a>
 
-<a class="work" href="/portfolio/#case-vicente">
+<a class="work" href="/portfolio/#case-vicente" target="_self" rel="noopener">
 <img class="wi" src="/img/vicente-cover.webp" alt="" loading="lazy">
 <span class="wsh" aria-hidden="true"></span>
+
 <span class="wl"><img src="/img/vicente-logo.webp" alt="" loading="lazy"></span>
 <span class="wtx"><span style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 20px">Vicente Botura</span><span style="font-size: 14px; color: #B7BCCB">Legal advisory &amp; litigation</span></span>
 </a>
@@ -395,10 +398,6 @@ a{color:inherit}a:hover{color:#fff}
 </div>
 </main>
 </div>
-<a class="wa-fab" href="https://wa.me/5516996377918?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20needesign%20e%20quero%20conversar." target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
-<span class="wa-ic" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path><path d="M9.5 9.5c0 2.5 2.5 5 5 5l1-1.2-1.8-.9-.7.7c-.9-.4-1.7-1.2-2.1-2.1l.7-.7-.9-1.8z"></path></svg></span>
-<span class="wa-tx">Fale com a gente</span>
-</a>
 </div>
 
 </div>
