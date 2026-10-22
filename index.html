@@ -34,6 +34,13 @@ a{color:inherit}a:hover{color:#fff}
 @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(40px,-50px)}}
 .ring{position:absolute;border:1px solid rgba(255,255,255,0.14);border-radius:50%;animation:spin 30s linear infinite}
 .ring::after{content:'';position:absolute;top:-5px;left:50%;width:10px;height:10px;border-radius:50%;background:var(--acc);box-shadow:0 0 24px var(--acc)}
+.selo{position:absolute;width:300px;height:300px;right:110px;top:250px;pointer-events:none;opacity:0;animation:seloin 1.4s .5s cubic-bezier(.2,.8,.2,1) forwards}
+.selo img{position:absolute;inset:0;width:100%;height:100%;display:block}
+.selo-txt{animation:spin 38s linear infinite}
+.selo-ico{filter:drop-shadow(0 0 36px rgba(253,48,41,.35))}
+@media (max-width:1240px){.selo{display:none}}
+@media (prefers-reduced-motion: reduce){.selo-txt{animation:none !important}}
+@keyframes seloin{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:none}}
 .ring.r2{animation-duration:46s;animation-direction:reverse}
 @keyframes spin{to{transform:rotate(360deg)}}
 .word{display:inline-block;opacity:0;transform:translateY(60%);animation:wordin 0.9s cubic-bezier(.2,.8,.2,1) forwards}
@@ -169,10 +176,10 @@ footer > div{flex-direction:column;align-items:flex-start !important;gap:14px !i
 @media (max-width:760px){.to-top{bottom:84px !important}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "needesign", "url": "https://needesign.com.br/", "logo": "https://needesign.com.br/img/needesign-logo.webp", "image": "https://needesign.com.br/img/og-needesign.jpg", "description": "Agência de branding e marketing em Ribeirão Preto. Construção de marca, identidade visual, sites, redes sociais, tráfego pago e vídeo para marcas que querem crescer.", "telephone": "+55 16 99637-7918", "address": {"@type": "PostalAddress", "addressLocality": "Ribeirão Preto", "addressRegion": "SP", "addressCountry": "BR"}, "areaServed": "BR", "sameAs": ["https://www.instagram.com/needesign.ag/", "https://www.facebook.com/needesign.ag"]}</script>
-<script src="/js/site.js?v=202610221130" defer></script>
-<script src="/js/morphdom.min.js?v=202610221130" defer></script>
-<script src="/js/dc.js?v=202610221130" defer></script>
-<script src="/js/pages/index.js?v=202610221130" defer></script>
+<script src="/js/site.js?v=202610221141" defer></script>
+<script src="/js/morphdom.min.js?v=202610221141" defer></script>
+<script src="/js/dc.js?v=202610221141" defer></script>
+<script src="/js/pages/index.js?v=202610221141" defer></script>
 </head>
 <body>
 <template id="dc-template">
@@ -222,6 +229,7 @@ footer > div{flex-direction:column;align-items:flex-start !important;gap:14px !i
 <div class="orb" aria-hidden="true" style="width: 420px; height: 420px; background: #8E1410; bottom: -80px; left: -100px; animation-delay: -6s; opacity: 0.4"></div>
 <div class="ring" aria-hidden="true" style="width: 640px; height: 640px; right: -60px; top: 80px"></div>
 <div class="ring r2" aria-hidden="true" style="width: 440px; height: 440px; right: 40px; top: 180px"></div>
+<div class="selo" aria-hidden="true"><img class="selo-txt" src="/img/selo-txt-red.webp" alt=""><img class="selo-ico" src="/img/selo-ico-red.webp" alt=""></div>
 <div style="position: relative; z-index: 2; max-width: 1280px; width: 100%; margin: 0 auto; display: flex; flex-direction: column; gap: 32px">
 <div style="display: flex; flex-direction: column; gap: 32px">
 <div class="mono" style="font-size: 13px; color: {{accent}}; display: flex; align-items: center; gap: 12px"><span style="width: 8px; height: 8px; border-radius: 50%; background: {{accent}}; box-shadow: 0 0 16px {{accent}}"></span>Agência 360 · Ribeirão Preto</div>
@@ -434,6 +442,7 @@ footer > div{flex-direction:column;align-items:flex-start !important;gap:14px !i
 <div class="orb" aria-hidden="true" style="width: 420px; height: 420px; background: #8E1410; bottom: -80px; left: -100px; animation-delay: -6s; opacity: 0.4"></div>
 <div class="ring" aria-hidden="true" style="width: 640px; height: 640px; right: -60px; top: 80px"></div>
 <div class="ring r2" aria-hidden="true" style="width: 440px; height: 440px; right: 40px; top: 180px"></div>
+<div class="selo" aria-hidden="true"><img class="selo-txt" src="/img/selo-txt-red.webp" alt=""><img class="selo-ico" src="/img/selo-ico-red.webp" alt=""></div>
 <div style="position: relative; z-index: 2; max-width: 1280px; width: 100%; margin: 0 auto; display: flex; flex-direction: column; gap: 32px">
 <div style="display: flex; flex-direction: column; gap: 32px">
 <div class="mono" style="font-size: 13px; color: #FD3029; display: flex; align-items: center; gap: 12px"><span style="width: 8px; height: 8px; border-radius: 50%; background: #FD3029; box-shadow: 0 0 16px #FD3029"></span>Agência 360 · Ribeirão Preto</div>
