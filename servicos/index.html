@@ -37,8 +37,18 @@ a{color:inherit}a:hover{color:#fff}
 .ghost{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 22px;border-radius:999px;border:1px solid rgba(255,255,255,0.22);text-decoration:none;font-size:15px;color:#E8EAF0}
 .ghost.sm{min-height:44px}
 .tabs{position:sticky;top:0;z-index:20;background:rgba(6,7,11,0.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,0.08)}
-.tabsin{max-width:1280px;margin:0 auto;padding:12px 24px;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+.tabsin{max-width:1280px;margin:0 auto;padding:12px 56px;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
 .tabsin::-webkit-scrollbar{display:none}
+.tabwrap{position:relative;max-width:1280px;margin:0 auto}
+.tabwrap .tabsin{max-width:none;scroll-behavior:smooth}
+.tarr{position:absolute;top:50%;z-index:2;width:40px;height:40px;margin-top:-20px;border-radius:50%;border:1px solid rgba(255,255,255,0.22);background:#0B0C12;color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:opacity .25s,border-color .25s,color .25s;box-shadow:0 0 0 10px rgba(6,7,11,0.0)}
+.tarr:hover{border-color:var(--acc);color:var(--acc)}
+.tarr.l{left:8px}.tarr.r{right:8px}
+.tabwrap::before,.tabwrap::after{content:'';position:absolute;top:0;bottom:0;width:72px;z-index:1;pointer-events:none;transition:opacity .25s}
+.tabwrap::before{left:0;background:linear-gradient(90deg,#06070B 45%,rgba(6,7,11,0))}
+.tabwrap::after{right:0;background:linear-gradient(270deg,#06070B 45%,rgba(6,7,11,0))}
+.tabwrap.at-start .tarr.l,.tabwrap.at-start::before,.tabwrap.at-end .tarr.r,.tabwrap.at-end::after{opacity:0;pointer-events:none}
+.tabwrap.fits .tarr,.tabwrap.fits::before,.tabwrap.fits::after{display:none}
 .tab{flex:none;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid rgba(255,255,255,0.14);background:transparent;color:#B7BCCB;font:inherit;font-size:14px;cursor:pointer;white-space:nowrap;transition:background .25s,border-color .25s,color .25s}
 .tab:hover{color:#fff;border-color:rgba(255,255,255,0.35)}
 .tab.on{background:var(--acc);border-color:var(--acc);color:#06070B;font-weight:700}
@@ -81,7 +91,7 @@ a{color:inherit}a:hover{color:#fff}
 .shero{padding:36px 20px 48px !important}
 .shero h1{font-size:clamp(26px,8.2vw,40px) !important}
 .sbody{padding:0 20px 96px !important;gap:64px !important}
-.tabsin{padding:10px 20px}
+.tabsin{padding:10px 52px}
 .why .wn{font-size:30px;min-width:56px}
 .why .wt{font-size:18px}
 .work{width:240px;height:300px}
@@ -91,10 +101,10 @@ a{color:inherit}a:hover{color:#fff}
 }
 @media (prefers-reduced-motion: reduce){.ns *{animation:none !important;transition:none !important;opacity:1 !important;transform:none !important}}
 </style>
-<script src="/js/site.js?v=202610221115" defer></script>
-<script src="/js/morphdom.min.js?v=202610221115" defer></script>
-<script src="/js/dc.js?v=202610221115" defer></script>
-<script src="/js/pages/servicos.js?v=202610221115" defer></script>
+<script src="/js/site.js?v=202610221130" defer></script>
+<script src="/js/morphdom.min.js?v=202610221130" defer></script>
+<script src="/js/dc.js?v=202610221130" defer></script>
+<script src="/js/pages/servicos.js?v=202610221130" defer></script>
 </head>
 <body>
 <template id="dc-template">
@@ -104,8 +114,12 @@ a{color:inherit}a:hover{color:#fff}
 <a class="ghost sm" href="/"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="M11 6l-6 6 6 6"></path></svg>Voltar ao site</a>
 </header>
 <nav class="tabs" aria-label="Serviços">
-<div class="tabsin">
+<div class="{{tabWrapCls}}">
+<button type="button" class="tarr l" aria-label="Ver serviços anteriores" onClick="{{tabsPrev}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg></button>
+<div class="tabsin" id="tabsin">
 <sc-for list="{{tabs}}" as="t" hint-placeholder-count="8"><button type="button" class="{{t.cls}}" aria-pressed="{{t.pressed}}" onClick="{{t.pick}}"><span class="tn">{{t.num}}</span>{{t.n}}</button></sc-for>
+</div>
+<button type="button" class="tarr r" aria-label="Ver mais serviços" onClick="{{tabsNext}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button>
 </div>
 </nav>
 
@@ -206,8 +220,12 @@ a{color:inherit}a:hover{color:#fff}
 <a class="ghost sm" href="/"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="M11 6l-6 6 6 6"></path></svg>Voltar ao site</a>
 </header>
 <nav class="tabs" aria-label="Serviços">
-<div class="tabsin">
-<button type="button" class="tab on" aria-pressed="true" data-dcev="click:0"><span class="tn">01</span>Construção de marca</button><button type="button" class="tab" aria-pressed="false" data-dcev="click:1"><span class="tn">02</span>Impressos e papelaria</button><button type="button" class="tab" aria-pressed="false" data-dcev="click:2"><span class="tn">03</span>Redes sociais</button><button type="button" class="tab" aria-pressed="false" data-dcev="click:3"><span class="tn">04</span>Criação de websites</button><button type="button" class="tab" aria-pressed="false" data-dcev="click:4"><span class="tn">05</span>Tráfego pago</button><button type="button" class="tab" aria-pressed="false" data-dcev="click:5"><span class="tn">06</span>Análise de mercado</button><button type="button" class="tab" aria-pressed="false" data-dcev="click:6"><span class="tn">07</span>Captação e edição de vídeo</button><button type="button" class="tab" aria-pressed="false" data-dcev="click:7"><span class="tn">08</span>Planejamento estratégico</button>
+<div class="tabwrap at-start">
+<button type="button" class="tarr l" aria-label="Ver serviços anteriores" data-dcev="click:0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg></button>
+<div class="tabsin" id="tabsin">
+<button type="button" class="tab on" aria-pressed="true" data-dcev="click:1"><span class="tn">01</span>Construção de marca</button><button type="button" class="tab" aria-pressed="false" data-dcev="click:2"><span class="tn">02</span>Impressos e papelaria</button><button type="button" class="tab" aria-pressed="false" data-dcev="click:3"><span class="tn">03</span>Redes sociais</button><button type="button" class="tab" aria-pressed="false" data-dcev="click:4"><span class="tn">04</span>Criação de websites</button><button type="button" class="tab" aria-pressed="false" data-dcev="click:5"><span class="tn">05</span>Tráfego pago</button><button type="button" class="tab" aria-pressed="false" data-dcev="click:6"><span class="tn">06</span>Análise de mercado</button><button type="button" class="tab" aria-pressed="false" data-dcev="click:7"><span class="tn">07</span>Captação e edição de vídeo</button><button type="button" class="tab" aria-pressed="false" data-dcev="click:8"><span class="tn">08</span>Planejamento estratégico</button>
+</div>
+<button type="button" class="tarr r" aria-label="Ver mais serviços" data-dcev="click:9"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button>
 </div>
 </nav>
 
@@ -297,8 +315,8 @@ a{color:inherit}a:hover{color:#fff}
 <div style="display: flex; flex-direction: column; gap: 8px"><h2 style="font-size: 40px; color: #fff">Trabalhos de construção de marca</h2></div>
 <div style="display: flex; gap: 10px; align-items: center">
 <a class="ghost sm" href="/portfolio/">Ver portfólio</a>
-<button type="button" class="carr" aria-label="Anterior" data-dcev="click:8"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="M11 6l-6 6 6 6"></path></svg></button>
-<button type="button" class="carr" aria-label="Próximo" data-dcev="click:9"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></button>
+<button type="button" class="carr" aria-label="Anterior" data-dcev="click:10"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="M11 6l-6 6 6 6"></path></svg></button>
+<button type="button" class="carr" aria-label="Próximo" data-dcev="click:11"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></button>
 </div>
 </div>
 <div id="works" class="works">
@@ -395,7 +413,7 @@ a{color:inherit}a:hover{color:#fff}
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 12px; position: relative">
 <a class="btn" href="/orcamento/">Montar meu plano</a>
-<button type="button" class="ghost" style="background: transparent; font: inherit; cursor: pointer" data-dcev="click:10">Próximo serviço: Impressos e papelaria →</button>
+<button type="button" class="ghost" style="background: transparent; font: inherit; cursor: pointer" data-dcev="click:12">Próximo serviço: Impressos e papelaria →</button>
 </div>
 </div>
 </main>

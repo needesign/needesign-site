@@ -4,9 +4,35 @@ componentDidMount() {
 const h = (window.location.hash || '').replace('#servico-', '');
 const i = SERVICES.findIndex((s) => s.id === h);
 if (i >= 0) this.setState({ idx: i });
+const el = document.getElementById('tabsin');
+this._tabsUpd = () => {
+const e = document.getElementById('tabsin'); if (!e) return;
+const st = this.state || {};
+const start = e.scrollLeft <= 4, end = e.scrollLeft + e.clientWidth >= e.scrollWidth - 4, fits = e.scrollWidth <= e.clientWidth + 4;
+if (st.tStart !== start || st.tEnd !== end || st.tFits !== fits) this.setState({ tStart: start, tEnd: end, tFits: fits });
+};
+if (el) {
+let raf = 0;
+el.addEventListener('scroll', () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(this._tabsUpd); }, { passive: true });
+el.addEventListener('wheel', (ev) => { if (Math.abs(ev.deltaY) > Math.abs(ev.deltaX) && el.scrollWidth > el.clientWidth) { ev.preventDefault(); el.scrollLeft += ev.deltaY; } }, { passive: false });
+let down = false, sx = 0, sl = 0, moved = false;
+el.addEventListener('pointerdown', (ev) => { if (ev.pointerType !== 'mouse') return; down = true; moved = false; sx = ev.clientX; sl = el.scrollLeft; });
+window.addEventListener('pointermove', (ev) => { if (!down) return; const dx = ev.clientX - sx; if (Math.abs(dx) > 5) { moved = true; el.style.scrollBehavior = 'auto'; el.scrollLeft = sl - dx; } });
+window.addEventListener('pointerup', () => { if (!down) return; down = false; el.style.scrollBehavior = ''; });
+el.addEventListener('click', (ev) => { if (moved) { ev.stopPropagation(); ev.preventDefault(); moved = false; } }, true);
+}
+window.addEventListener('resize', this._tabsUpd);
+setTimeout(() => { this._centerTab(false); this._tabsUpd(); }, 60);
+}
+_centerTab(smooth) {
+const e = document.getElementById('tabsin'); if (!e) return;
+const b = e.querySelector('.tab.on'); if (!b) return;
+const left = b.offsetLeft - (e.clientWidth - b.offsetWidth) / 2;
+e.scrollTo({ left: Math.max(0, left), behavior: smooth ? 'smooth' : 'auto' });
 }
 componentDidUpdate(pp, ps) {
 if (ps && this.state && ps.idx !== this.state.idx) {
+this._centerTab(true);
 const w = document.getElementById('works'); if (w) w.scrollLeft = 0;
 const top = document.querySelector('.tabs'); if (top && window.scrollY > top.offsetTop) window.scrollTo({ top: top.offsetTop, behavior: 'smooth' });
 }
@@ -36,6 +62,9 @@ s,
 total: pad(SERVICES.length),
 tabs: SERVICES.map((x, i) => ({ n: x.n, num: pad(i + 1), cls: 'tab' + (i === idx ? ' on' : ''), pressed: i === idx ? 'true' : 'false', pick: go(i) })),
 swapCls: 'swap' + ((st.tick || 0) % 2 ? ' b' : ''),
+tabWrapCls: 'tabwrap' + (st.tStart !== false ? ' at-start' : '') + (st.tEnd ? ' at-end' : '') + (st.tFits ? ' fits' : ''),
+tabsPrev: () => { const e = document.getElementById('tabsin'); if (e) e.scrollBy({ left: -Math.max(200, e.clientWidth * 0.7), behavior: 'smooth' }); },
+tabsNext: () => { const e = document.getElementById('tabsin'); if (e) e.scrollBy({ left: Math.max(200, e.clientWidth * 0.7), behavior: 'smooth' }); },
 nextName: SERVICES[nx].n,
 goNext: go(nx),
 worksPrev: scroll(-1),
