@@ -80,9 +80,20 @@ a{color:inherit}a:hover{color:#fff}
 .ovhero .hs{position:absolute;inset:0;background:linear-gradient(to top,#06070B 0%,rgba(6,7,11,.4) 45%,rgba(6,7,11,.2) 100%)}
 .rise{opacity:0;transform:translateY(30px);animation:rise .9s cubic-bezier(.2,.8,.2,1) forwards}
 @keyframes rise{to{opacity:1;transform:none}}
-.gal{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.gal img{width:100%;height:100%;min-height:280px;object-fit:cover;border-radius:22px;display:block}
-.gal .gw{grid-column:span 2}
+.gal{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
+.gi{display:block;width:100%;margin:0;padding:0;border:1px solid rgba(255,255,255,0.06);background:#0A0C12;border-radius:18px;overflow:hidden;cursor:zoom-in;break-inside:avoid;-webkit-column-break-inside:avoid}
+.gi img{width:100%;height:auto;display:block;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.gi:hover img{transform:scale(1.035)}
+.gi:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.lb{position:fixed;inset:0;z-index:90;background:rgba(4,5,8,0.96);display:flex;align-items:center;justify-content:center;padding:64px 72px;animation:lbin .3s ease both}
+@keyframes lbin{from{opacity:0}to{opacity:1}}
+.lbimg{max-width:100%;max-height:100%;object-fit:contain;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.6);animation:lbimg .35s cubic-bezier(.2,.8,.2,1) both}
+@keyframes lbimg{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:none}}
+.lbx,.lbnav{position:absolute;width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,0.25);background:rgba(6,7,11,0.7);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .25s,color .25s}
+.lbx:hover,.lbnav:hover{border-color:var(--acc);color:var(--acc)}
+.lbx{top:16px;right:16px}
+.lbnav{top:50%;margin-top:-26px}.lbnav.l{left:14px}.lbnav.r{right:14px}
+.lbcount{position:absolute;left:0;right:0;bottom:18px;text-align:center;font-size:12px;color:#B7BCCB;pointer-events:none}
 .closebtn{position:fixed;top:20px;right:20px;z-index:70;width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,0.25);background:rgba(6,7,11,0.7);backdrop-filter:blur(10px);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer}
 .closebtn:hover{border-color:var(--acc);color:var(--acc)}
 .nextcase{display:flex;align-items:center;justify-content:space-between;gap:20px;width:100%;padding:28px;border-radius:24px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.03);color:#fff;font:inherit;cursor:pointer;text-align:left;transition:border-color .3s}
@@ -103,26 +114,18 @@ a{color:inherit}a:hover{color:#fff}
 .tile .tinfo{left:12px;right:12px;bottom:12px;transform:none}
 .ovbody{padding:0 20px 80px !important}
 .ovhero{height:56vh;min-height:320px}
-.gal{grid-template-columns:minmax(0,1fr)}
-.gal .gw{grid-column:auto}
-.gal img{min-height:200px}
+.gal{gap:10px}
+.gi{border-radius:12px}
+.lb{padding:64px 8px 56px}
+.lbnav{top:auto;bottom:8px;margin-top:0;width:44px;height:44px}
+.lbcount{bottom:auto;top:28px;left:16px;right:72px;text-align:left}
 }
 @media (prefers-reduced-motion: reduce){.np *,.np *::before{animation:none !important;transition:none !important;opacity:1 !important;clip-path:none !important}}
-.wa-fab{position:fixed;right:24px;bottom:24px;z-index:45;display:flex;align-items:center;gap:0;height:60px;min-width:60px;padding:0;border-radius:999px;background:#25D366;color:#06301A;text-decoration:none;font-family:'Manrope',sans-serif;font-weight:700;font-size:15px;box-shadow:0 12px 32px rgba(37,211,102,.35);opacity:0;transform:translateY(20px) scale(.9);animation:wafab .6s 1s cubic-bezier(.2,.8,.2,1) forwards;transition:box-shadow .3s}
-.wa-fab:hover{color:#06301A;box-shadow:0 16px 44px rgba(37,211,102,.5)}
-.wa-fab .wa-ic{position:relative;flex:none;width:60px;height:60px;display:flex;align-items:center;justify-content:center}
-.wa-fab .wa-ic::before{content:'';position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;animation:wapulse 2.4s 2s ease-out infinite}
-.wa-fab .wa-tx{max-width:0;overflow:hidden;white-space:nowrap;transition:max-width .45s cubic-bezier(.2,.8,.2,1),padding .45s}
-.wa-fab:hover .wa-tx,.wa-fab:focus-visible .wa-tx{max-width:220px;padding-right:22px}
-@keyframes wafab{to{opacity:1;transform:none}}
-@keyframes wapulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
-@media (max-width:760px){.wa-fab{right:16px;bottom:16px;height:56px;min-width:56px}.wa-fab .wa-ic{width:56px;height:56px}}
-@media (prefers-reduced-motion: reduce){.wa-fab{opacity:1;transform:none;animation:none}.wa-fab .wa-ic::before{animation:none;display:none}}
 </style>
-<script src="/js/site.js?v=202610221508" defer></script>
-<script src="/js/morphdom.min.js?v=202610221508" defer></script>
-<script src="/js/dc.js?v=202610221508" defer></script>
-<script src="/js/pages/portfolio.js?v=202610221508" defer></script>
+<script src="/js/site.js?v=202610231003" defer></script>
+<script src="/js/morphdom.min.js?v=202610231003" defer></script>
+<script src="/js/dc.js?v=202610231003" defer></script>
+<script src="/js/pages/portfolio.js?v=202610231003" defer></script>
 </head>
 <body>
 <template id="dc-template">
@@ -158,7 +161,7 @@ a{color:inherit}a:hover{color:#fff}
 <button type="button" class="tbtn" onClick="{{t.open}}" aria-label="{{t.aria}}">
 <img class="ti" src="{{t.img}}" alt="" loading="lazy">
 <span class="tsh" aria-hidden="true"></span>
-<span class="tlg"><img src="{{t.logo}}" alt="" loading="lazy"></span>
+<sc-if value="{{t.hasLogo}}" hint-placeholder-val="{{ true }}"><span class="tlg"><img src="{{t.logo}}" alt="" loading="lazy"></span></sc-if>
 <span class="tinfo"><span class="tname">{{t.name}}</span><span class="tsub">{{t.sub}}</span><span class="tgo">Ver case <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></span></span>
 </button>
 </div>
@@ -196,7 +199,7 @@ a{color:inherit}a:hover{color:#fff}
 <img class="hc" src="{{o.cover}}" alt="">
 <div class="hs" aria-hidden="true"></div>
 <div style="position: absolute; left: 0; right: 0; bottom: 0; max-width: 1280px; margin: 0 auto; padding: 0 24px 40px; display: flex; flex-direction: column; gap: 16px">
-<span class="rise" style="animation-delay: .25s; width: 88px; height: 88px; border-radius: 22px; overflow: hidden; background: #fff; box-shadow: 0 12px 32px rgba(0,0,0,.4)"><img src="{{o.logo}}" alt="Logo {{o.name}}" style="width: 100%; height: 100%; object-fit: cover; display: block"></span>
+<sc-if value="{{o.hasLogo}}" hint-placeholder-val="{{ true }}"><span class="rise" style="animation-delay: .25s; width: 88px; height: 88px; border-radius: 22px; overflow: hidden; background: #fff; box-shadow: 0 12px 32px rgba(0,0,0,.4)"><img src="{{o.logo}}" alt="Logo {{o.name}}" style="width: 100%; height: 100%; object-fit: cover; display: block"></span></sc-if>
 <span class="mono rise" style="animation-delay: .32s; font-size: 13px; color: {{accent}}">{{o.num}} · {{o.sub}}</span>
 <h2 class="rise" style="animation-delay: .4s; font-size: clamp(44px, 8vw, 112px); line-height: .92; font-weight: 800; color: #fff">{{o.name}}</h2>
 </div>
@@ -213,8 +216,12 @@ a{color:inherit}a:hover{color:#fff}
 <sc-if value="{{o.hasCores}}" hint-placeholder-val="{{ false }}"><span class="mono" style="font-size: 11px; color: #8A90A2; margin-top: 12px">Cores</span><span style="font-size: 16px; color: #D5D8E0">{{o.cores}}</span></sc-if>
 </div>
 </div>
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px">
+<h3 style="font-size: 32px; color: #fff">Projeto completo</h3>
+<span class="mono" style="font-size: 12px; color: #8A90A2">{{o.count}} peças · toque para ampliar</span>
+</div>
 <div class="gal">
-<sc-for list="{{o.gallery}}" as="g" hint-placeholder-count="2"><img class="{{g.cls}}" src="{{g.src}}" alt="{{g.alt}}" loading="lazy"></sc-for>
+<sc-for list="{{o.gallery}}" as="g" hint-placeholder-count="4"><button type="button" class="gi" onClick="{{g.open}}" aria-label="Ampliar imagem {{g.n}} de {{o.count}}"><img src="{{g.src}}" alt="{{g.alt}}" loading="lazy" decoding="async"></button></sc-for>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: stretch">
 <button type="button" class="nextcase" onClick="{{openNext}}" style="flex: 1 1 360px">
@@ -227,10 +234,16 @@ a{color:inherit}a:hover{color:#fff}
 </div>
 </sc-if>
 
-<a class="wa-fab" href="https://wa.me/5516996377918?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20needesign%20e%20quero%20conversar." target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
-<span class="wa-ic" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path><path d="M9.5 9.5c0 2.5 2.5 5 5 5l1-1.2-1.8-.9-.7.7c-.9-.4-1.7-1.2-2.1-2.1l.7-.7-.9-1.8z"></path></svg></span>
-<span class="wa-tx">Fale com a gente</span>
-</a>
+<sc-if value="{{hasLb}}" hint-placeholder-val="{{ false }}">
+<div class="lb" role="dialog" aria-modal="true" aria-label="Galeria {{o.name}}" onClick="{{lbBg}}">
+<img class="lbimg" src="{{lb.src}}" alt="{{lb.alt}}">
+<button type="button" class="lbx" aria-label="Fechar galeria" onClick="{{lbClose}}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12"></path><path d="M18 6L6 18"></path></svg></button>
+<button type="button" class="lbnav l" aria-label="Imagem anterior" onClick="{{lbPrev}}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg></button>
+<button type="button" class="lbnav r" aria-label="Próxima imagem" onClick="{{lbNext}}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button>
+<span class="lbcount mono">{{o.name}} · {{lb.n}} / {{lb.total}}</span>
+</div>
+</sc-if>
+
 </div>
 </x-dc>
 </template>
@@ -250,7 +263,7 @@ a{color:inherit}a:hover{color:#fff}
 <div style="display: flex; flex-direction: column; gap: 16px; max-width: 760px">
 <div class="mono word" style="font-size: 13px; color: #FD3029">Portfólio needesign</div>
 <h1 style="font-size: 92px; line-height: .95; font-weight: 800; color: #fff"><span class="word" style="animation-delay: .08s">Marcas</span> <span class="word" style="animation-delay: .18s">que</span> <span class="word" style="animation-delay: .28s; color: #FD3029">ficam.</span></h1>
-<p class="word" style="animation-delay: .4s; margin: 0; font-size: 19px; line-height: 1.55; color: #B7BCCB">10 cases de marca, 18 peças de impressos e papelaria e 12 identidades. Filtre pelo tipo de entrega e clique para ver cada projeto.</p>
+<p class="word" style="animation-delay: .4s; margin: 0; font-size: 19px; line-height: 1.55; color: #B7BCCB">21 cases de marca, 16 peças de impressos e papelaria e 2 identidades. Filtre pelo tipo de entrega e clique para ver cada projeto.</p>
 </div>
 <a class="btn word" href="/orcamento/" style="animation-delay: .5s">Monte seu plano</a>
 </div>
@@ -258,7 +271,7 @@ a{color:inherit}a:hover{color:#fff}
 
 <main class="pmain" style="max-width: 1280px; margin: 0 auto; padding: 0 24px 140px; display: flex; flex-direction: column; gap: 28px">
 <div class="filters" role="group" aria-label="Filtrar trabalhos">
-<button type="button" class="fbtn on" aria-pressed="true" data-dcev="click:0">Todos<span class="cnt">40</span></button><button type="button" class="fbtn" aria-pressed="false" data-dcev="click:1">Construção de marca<span class="cnt">10</span></button><button type="button" class="fbtn" aria-pressed="false" data-dcev="click:2">Identidades<span class="cnt">12</span></button><button type="button" class="fbtn" aria-pressed="false" data-dcev="click:3">Impressos e papelaria<span class="cnt">18</span></button>
+<button type="button" class="fbtn on" aria-pressed="true" data-dcev="click:0">Todos<span class="cnt">39</span></button><button type="button" class="fbtn" aria-pressed="false" data-dcev="click:1">Construção de marca<span class="cnt">21</span></button><button type="button" class="fbtn" aria-pressed="false" data-dcev="click:2">Identidades<span class="cnt">2</span></button><button type="button" class="fbtn" aria-pressed="false" data-dcev="click:3">Impressos e papelaria<span class="cnt">16</span></button>
 </div>
 <div class="pgrid anim-a">
 
@@ -291,8 +304,8 @@ a{color:inherit}a:hover{color:#fff}
 
 
 <div class="tile idt" style="animation-delay: 0.08s">
-<img src="/img/logo-illumileads.webp" alt="Illumileads" loading="lazy">
-<span class="iname">Illumileads</span>
+<img src="/img/logo-sereiapromo.webp" alt="Sereia Promo" loading="lazy">
+<span class="iname">Sereia Promo</span>
 </div>
 
 
@@ -337,8 +350,8 @@ a{color:inherit}a:hover{color:#fff}
 
 
 <div class="tile idt" style="animation-delay: 0.24s">
-<img src="/img/logo-rpprime.webp" alt="RP Prime" loading="lazy">
-<span class="iname">RP Prime</span>
+<img src="/img/logo-topfiber.webp" alt="Topfiber" loading="lazy">
+<span class="iname">Topfiber</span>
 </div>
 
 
@@ -369,16 +382,7 @@ a{color:inherit}a:hover{color:#fff}
 
 
 
-
-<div class="tile idt" style="animation-delay: 0.36s">
-<img src="/img/logo-sereiapromo.webp" alt="Sereia Promo" loading="lazy">
-<span class="iname">Sereia Promo</span>
-</div>
-
-
-
-
-<div class="tile mock" style="animation-delay: 0.40s">
+<div class="tile mock" style="animation-delay: 0.36s">
 <button type="button" class="tbtn" aria-label="Embalagens — Six Sens" data-dcev="click:11">
 <img class="ti" src="/img/sixsens-m1.webp" alt="" loading="lazy">
 <span class="tsh" aria-hidden="true"></span>
@@ -389,7 +393,7 @@ a{color:inherit}a:hover{color:#fff}
 
 
 
-<div class="tile wide" style="animation-delay: 0.44s">
+<div class="tile wide" style="animation-delay: 0.40s">
 <button type="button" class="tbtn" aria-label="Abrir case Growth Flow" data-dcev="click:12">
 <img class="ti" src="/img/growthflow-cover.webp" alt="" loading="lazy">
 <span class="tsh" aria-hidden="true"></span>
@@ -403,7 +407,7 @@ a{color:inherit}a:hover{color:#fff}
 
 
 
-<div class="tile mock" style="animation-delay: 0.48s">
+<div class="tile mock" style="animation-delay: 0.44s">
 <button type="button" class="tbtn" aria-label="Cartões de visita — Six Sens" data-dcev="click:13">
 <img class="ti" src="/img/sixsens-m2.webp" alt="" loading="lazy">
 <span class="tsh" aria-hidden="true"></span>
@@ -414,16 +418,7 @@ a{color:inherit}a:hover{color:#fff}
 
 
 
-
-
-<div class="tile idt" style="animation-delay: 0.52s">
-<img src="/img/logo-minghe.webp" alt="Minghe &amp; Costa" loading="lazy">
-<span class="iname">Minghe &amp; Costa</span>
-</div>
-
-
-
-<div class="tile" style="animation-delay: 0.56s">
+<div class="tile" style="animation-delay: 0.48s">
 <button type="button" class="tbtn" aria-label="Abrir case Ana Godoy" data-dcev="click:14">
 <img class="ti" src="/img/anagodoy-cover.webp" alt="" loading="lazy">
 <span class="tsh" aria-hidden="true"></span>
@@ -437,7 +432,7 @@ a{color:inherit}a:hover{color:#fff}
 
 
 
-<div class="tile mock wide" style="animation-delay: 0.60s">
+<div class="tile mock wide" style="animation-delay: 0.52s">
 <button type="button" class="tbtn" aria-label="Cartões de visita — Growth Flow" data-dcev="click:15">
 <img class="ti" src="/img/growthflow-m1.webp" alt="" loading="lazy">
 <span class="tsh" aria-hidden="true"></span>
@@ -449,16 +444,7 @@ a{color:inherit}a:hover{color:#fff}
 
 
 
-
-<div class="tile idt" style="animation-delay: 0.64s">
-<img src="/img/logo-topfiber.webp" alt="Topfiber" loading="lazy">
-<span class="iname">Topfiber</span>
-</div>
-
-
-
-
-<div class="tile mock" style="animation-delay: 0.68s">
+<div class="tile mock" style="animation-delay: 0.56s">
 <button type="button" class="tbtn" aria-label="Papel timbrado — Growth Flow" data-dcev="click:16">
 <img class="ti" src="/img/growthflow-m2.webp" alt="" loading="lazy">
 <span class="tsh" aria-hidden="true"></span>
@@ -469,7 +455,7 @@ a{color:inherit}a:hover{color:#fff}
 
 
 
-<div class="tile tall" style="animation-delay: 0.72s">
+<div class="tile tall" style="animation-delay: 0.60s">
 <button type="button" class="tbtn" aria-label="Abrir case Agodoy" data-dcev="click:17">
 <img class="ti" src="/img/agodoy-cover.webp" alt="" loading="lazy">
 <span class="tsh" aria-hidden="true"></span>
@@ -483,7 +469,7 @@ a{color:inherit}a:hover{color:#fff}
 
 
 
-<div class="tile mock" style="animation-delay: 0.76s">
+<div class="tile mock" style="animation-delay: 0.64s">
 <button type="button" class="tbtn" aria-label="Papelaria em relevo — Ana Godoy" data-dcev="click:18">
 <img class="ti" src="/img/anagodoy-m1.webp" alt="" loading="lazy">
 <span class="tsh" aria-hidden="true"></span>
@@ -494,16 +480,7 @@ a{color:inherit}a:hover{color:#fff}
 
 
 
-
-
-<div class="tile idt" style="animation-delay: 0.80s">
-<img src="/img/logo-ldxavier.webp" alt="LD Xavier" loading="lazy">
-<span class="iname">LD Xavier</span>
-</div>
-
-
-
-<div class="tile big" style="animation-delay: 0.84s">
+<div class="tile big" style="animation-delay: 0.68s">
 <button type="button" class="tbtn" aria-label="Abrir case Laís Fachinelli" data-dcev="click:19">
 <img class="ti" src="/img/lais-cover.webp" alt="" loading="lazy">
 <span class="tsh" aria-hidden="true"></span>
@@ -517,7 +494,7 @@ a{color:inherit}a:hover{color:#fff}
 
 
 
-<div class="tile mock" style="animation-delay: 0.88s">
+<div class="tile mock" style="animation-delay: 0.72s">
 <button type="button" class="tbtn" aria-label="Carimbo — Ana Godoy" data-dcev="click:20">
 <img class="ti" src="/img/anagodoy-m2.webp" alt="" loading="lazy">
 <span class="tsh" aria-hidden="true"></span>
@@ -529,16 +506,7 @@ a{color:inherit}a:hover{color:#fff}
 
 
 
-
-<div class="tile idt" style="animation-delay: 0.92s">
-<img src="/img/logo-morecookies.webp" alt="More Cookies" loading="lazy">
-<span class="iname">More Cookies</span>
-</div>
-
-
-
-
-<div class="tile mock" style="animation-delay: 0.96s">
+<div class="tile mock" style="animation-delay: 0.76s">
 <button type="button" class="tbtn" aria-label="Cartões de visita — Ana Godoy" data-dcev="click:21">
 <img class="ti" src="/img/anagodoy-m3.webp" alt="" loading="lazy">
 <span class="tsh" aria-hidden="true"></span>
@@ -549,7 +517,7 @@ a{color:inherit}a:hover{color:#fff}
 
 
 
-<div class="tile" style="animation-delay: 0.96s">
+<div class="tile" style="animation-delay: 0.80s">
 <button type="button" class="tbtn" aria-label="Abrir case Legáxis" data-dcev="click:22">
 <img class="ti" src="/img/legaxis-cover.webp" alt="" loading="lazy">
 <span class="tsh" aria-hidden="true"></span>
@@ -563,7 +531,7 @@ a{color:inherit}a:hover{color:#fff}
 
 
 
-<div class="tile mock wide" style="animation-delay: 0.96s">
+<div class="tile mock wide" style="animation-delay: 0.84s">
 <button type="button" class="tbtn" aria-label="Ambientação — Agodoy" data-dcev="click:23">
 <img class="ti" src="/img/agodoy-m1.webp" alt="" loading="lazy">
 <span class="tsh" aria-hidden="true"></span>
@@ -574,21 +542,12 @@ a{color:inherit}a:hover{color:#fff}
 
 
 
-
-
-<div class="tile idt" style="animation-delay: 0.96s">
-<img src="/img/logo-nexgen.webp" alt="Nexgen" loading="lazy">
-<span class="iname">Nexgen</span>
-</div>
-
-
-
-<div class="tile wide" style="animation-delay: 0.96s">
-<button type="button" class="tbtn" aria-label="Abrir case salesrun" data-dcev="click:24">
-<img class="ti" src="/img/salesrun-cover.webp" alt="" loading="lazy">
+<div class="tile wide" style="animation-delay: 0.88s">
+<button type="button" class="tbtn" aria-label="Abrir case Allfinc" data-dcev="click:24">
+<img class="ti" src="/img/work/allfinc/18.webp" alt="" loading="lazy">
 <span class="tsh" aria-hidden="true"></span>
-<span class="tlg"><img src="/img/salesrun-logo.webp" alt="" loading="lazy"></span>
-<span class="tinfo"><span class="tname">salesrun</span><span class="tsub">Rebranding · marca endossada</span><span class="tgo">Ver case <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></span></span>
+
+<span class="tinfo"><span class="tname">Allfinc</span><span class="tsub">Inteligência patrimonial</span><span class="tgo">Ver case <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></span></span>
 </button>
 </div>
 
@@ -597,7 +556,7 @@ a{color:inherit}a:hover{color:#fff}
 
 
 
-<div class="tile mock" style="animation-delay: 0.96s">
+<div class="tile mock" style="animation-delay: 0.92s">
 <button type="button" class="tbtn" aria-label="Cartões de visita — Agodoy" data-dcev="click:25">
 <img class="ti" src="/img/agodoy-m2.webp" alt="" loading="lazy">
 <span class="tsh" aria-hidden="true"></span>
@@ -605,15 +564,6 @@ a{color:inherit}a:hover{color:#fff}
 </button>
 </div>
 
-
-
-
-
-
-<div class="tile idt" style="animation-delay: 0.96s">
-<img src="/img/logo-octahouse.webp" alt="Octa House" loading="lazy">
-<span class="iname">Octa House</span>
-</div>
 
 
 
@@ -630,11 +580,11 @@ a{color:inherit}a:hover{color:#fff}
 
 
 <div class="tile" style="animation-delay: 0.96s">
-<button type="button" class="tbtn" aria-label="Abrir case Vicente Botura" data-dcev="click:27">
-<img class="ti" src="/img/vicente-cover.webp" alt="" loading="lazy">
+<button type="button" class="tbtn" aria-label="Abrir case Quórum" data-dcev="click:27">
+<img class="ti" src="/img/work/quorum/19.webp" alt="" loading="lazy">
 <span class="tsh" aria-hidden="true"></span>
-<span class="tlg"><img src="/img/vicente-logo.webp" alt="" loading="lazy"></span>
-<span class="tinfo"><span class="tname">Vicente Botura</span><span class="tsub">Legal advisory &amp; litigation</span><span class="tgo">Ver case <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></span></span>
+
+<span class="tinfo"><span class="tname">Quórum</span><span class="tsub">Identidade visual</span><span class="tgo">Ver case <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></span></span>
 </button>
 </div>
 
@@ -654,18 +604,22 @@ a{color:inherit}a:hover{color:#fff}
 
 
 
-
-
-<div class="tile idt" style="animation-delay: 0.96s">
-<img src="/img/logo-estruturar.webp" alt="Estruturar" loading="lazy">
-<span class="iname">Estruturar</span>
+<div class="tile big" style="animation-delay: 0.96s">
+<button type="button" class="tbtn" aria-label="Abrir case LD Xavier" data-dcev="click:29">
+<img class="ti" src="/img/work/ldxavier/14.webp" alt="" loading="lazy">
+<span class="tsh" aria-hidden="true"></span>
+<span class="tlg"><img src="/img/logo-ldxavier.webp" alt="" loading="lazy"></span>
+<span class="tinfo"><span class="tname">LD Xavier</span><span class="tsub">Identidade visual e aplicações</span><span class="tgo">Ver case <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></span></span>
+</button>
 </div>
 
 
 
 
-<div class="tile mock" style="animation-delay: 0.96s">
-<button type="button" class="tbtn" aria-label="Canecas — Legáxis" data-dcev="click:29">
+
+
+<div class="tile mock wide" style="animation-delay: 0.96s">
+<button type="button" class="tbtn" aria-label="Canecas — Legáxis" data-dcev="click:30">
 <img class="ti" src="/img/legaxis-m1.webp" alt="" loading="lazy">
 <span class="tsh" aria-hidden="true"></span>
 <span class="tinfo"><span class="mono" style="font-size: 11px; color: #FD3029">Canecas</span><span class="tname" style="font-size: 18px">Legáxis</span><span class="tgo">Ver case <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></span></span>
@@ -675,12 +629,12 @@ a{color:inherit}a:hover{color:#fff}
 
 
 
-
-<div class="tile mock" style="animation-delay: 0.96s">
-<button type="button" class="tbtn" aria-label="Canecas — salesrun" data-dcev="click:30">
-<img class="ti" src="/img/salesrun-m1.webp" alt="" loading="lazy">
+<div class="tile tall" style="animation-delay: 0.96s">
+<button type="button" class="tbtn" aria-label="Abrir case Octa House" data-dcev="click:31">
+<img class="ti" src="/img/work/octahouse/06.webp" alt="" loading="lazy">
 <span class="tsh" aria-hidden="true"></span>
-<span class="tinfo"><span class="mono" style="font-size: 11px; color: #FD3029">Canecas</span><span class="tname" style="font-size: 18px">salesrun</span><span class="tgo">Ver case <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></span></span>
+<span class="tlg"><img src="/img/logo-octahouse.webp" alt="" loading="lazy"></span>
+<span class="tinfo"><span class="tname">Octa House</span><span class="tsub">Identidade visual e aplicações</span><span class="tgo">Ver case <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></span></span>
 </button>
 </div>
 
@@ -688,11 +642,12 @@ a{color:inherit}a:hover{color:#fff}
 
 
 
-<div class="tile mock" style="animation-delay: 0.96s">
-<button type="button" class="tbtn" aria-label="Cartões de visita — Vicente Botura" data-dcev="click:31">
-<img class="ti" src="/img/vicente-m1.webp" alt="" loading="lazy">
+<div class="tile" style="animation-delay: 0.96s">
+<button type="button" class="tbtn" aria-label="Abrir case Braseirinha" data-dcev="click:32">
+<img class="ti" src="/img/work/braseirinha/23.webp" alt="" loading="lazy">
 <span class="tsh" aria-hidden="true"></span>
-<span class="tinfo"><span class="mono" style="font-size: 11px; color: #FD3029">Cartões de visita</span><span class="tname" style="font-size: 18px">Vicente Botura</span><span class="tgo">Ver case <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></span></span>
+
+<span class="tinfo"><span class="tname">Braseirinha</span><span class="tsub">Identidade visual e embalagens</span><span class="tgo">Ver case <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></span></span>
 </button>
 </div>
 
@@ -700,20 +655,107 @@ a{color:inherit}a:hover{color:#fff}
 
 
 
-
-<div class="tile idt" style="animation-delay: 0.96s">
-<img src="/img/logo-roadmap.webp" alt="Roadmap to Success" loading="lazy">
-<span class="iname">Roadmap to Success</span>
+<div class="tile wide" style="animation-delay: 0.96s">
+<button type="button" class="tbtn" aria-label="Abrir case More Cookies" data-dcev="click:33">
+<img class="ti" src="/img/work/morecookies/16.webp" alt="" loading="lazy">
+<span class="tsh" aria-hidden="true"></span>
+<span class="tlg"><img src="/img/logo-morecookies.webp" alt="" loading="lazy"></span>
+<span class="tinfo"><span class="tname">More Cookies</span><span class="tsub">Rebranding</span><span class="tgo">Ver case <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></span></span>
+</button>
 </div>
 
 
 
 
 
-<div class="tile idt" style="animation-delay: 0.96s">
-<img src="/img/logo-minghe-emblem.webp" alt="Minghe &amp; Costa · emblema" loading="lazy">
-<span class="iname">Minghe &amp; Costa · emblema</span>
+<div class="tile" style="animation-delay: 0.96s">
+<button type="button" class="tbtn" aria-label="Abrir case Nexgen" data-dcev="click:34">
+<img class="ti" src="/img/work/nexgen/02.webp" alt="" loading="lazy">
+<span class="tsh" aria-hidden="true"></span>
+<span class="tlg"><img src="/img/logo-nexgen.webp" alt="" loading="lazy"></span>
+<span class="tinfo"><span class="tname">Nexgen</span><span class="tsub">Identidade visual e aplicações</span><span class="tgo">Ver case <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></span></span>
+</button>
 </div>
+
+
+
+
+
+<div class="tile tall" style="animation-delay: 0.96s">
+<button type="button" class="tbtn" aria-label="Abrir case Estruturar" data-dcev="click:35">
+<img class="ti" src="/img/work/estruturar/12.webp" alt="" loading="lazy">
+<span class="tsh" aria-hidden="true"></span>
+<span class="tlg"><img src="/img/logo-estruturar.webp" alt="" loading="lazy"></span>
+<span class="tinfo"><span class="tname">Estruturar</span><span class="tsub">Identidade visual e aplicações</span><span class="tgo">Ver case <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></span></span>
+</button>
+</div>
+
+
+
+
+
+<div class="tile big" style="animation-delay: 0.96s">
+<button type="button" class="tbtn" aria-label="Abrir case Estação 86" data-dcev="click:36">
+<img class="ti" src="/img/work/estacao86/06.webp" alt="" loading="lazy">
+<span class="tsh" aria-hidden="true"></span>
+
+<span class="tinfo"><span class="tname">Estação 86</span><span class="tsub">Identidade, mascote e embalagens</span><span class="tgo">Ver case <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></span></span>
+</button>
+</div>
+
+
+
+
+
+<div class="tile" style="animation-delay: 0.96s">
+<button type="button" class="tbtn" aria-label="Abrir case Illumileads" data-dcev="click:37">
+<img class="ti" src="/img/work/illumileads/06.webp" alt="" loading="lazy">
+<span class="tsh" aria-hidden="true"></span>
+<span class="tlg"><img src="/img/logo-illumileads.webp" alt="" loading="lazy"></span>
+<span class="tinfo"><span class="tname">Illumileads</span><span class="tsub">Identidade visual e aplicações</span><span class="tgo">Ver case <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></span></span>
+</button>
+</div>
+
+
+
+
+
+<div class="tile wide" style="animation-delay: 0.96s">
+<button type="button" class="tbtn" aria-label="Abrir case RP Prime" data-dcev="click:38">
+<img class="ti" src="/img/work/rpprime/09.webp" alt="" loading="lazy">
+<span class="tsh" aria-hidden="true"></span>
+<span class="tlg"><img src="/img/logo-rpprime.webp" alt="" loading="lazy"></span>
+<span class="tinfo"><span class="tname">RP Prime</span><span class="tsub">Identidade visual e aplicações</span><span class="tgo">Ver case <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></span></span>
+</button>
+</div>
+
+
+
+
+
+<div class="tile" style="animation-delay: 0.96s">
+<button type="button" class="tbtn" aria-label="Abrir case Minghe &amp; Costa" data-dcev="click:39">
+<img class="ti" src="/img/work/minghe/02.webp" alt="" loading="lazy">
+<span class="tsh" aria-hidden="true"></span>
+<span class="tlg"><img src="/img/logo-minghe.webp" alt="" loading="lazy"></span>
+<span class="tinfo"><span class="tname">Minghe &amp; Costa</span><span class="tsub">Identidade visual e papelaria</span><span class="tgo">Ver case <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></span></span>
+</button>
+</div>
+
+
+
+
+
+<div class="tile big" style="animation-delay: 0.96s">
+<button type="button" class="tbtn" aria-label="Abrir case Roadmap to Success" data-dcev="click:40">
+<img class="ti" src="/img/work/rts/02.webp" alt="" loading="lazy">
+<span class="tsh" aria-hidden="true"></span>
+<span class="tlg"><img src="/img/logo-roadmap.webp" alt="" loading="lazy"></span>
+<span class="tinfo"><span class="tname">Roadmap to Success</span><span class="tsub">Identidade visual e aplicações</span><span class="tgo">Ver case <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></span></span>
+</button>
+</div>
+
+
 
 
 </div>
@@ -728,10 +770,8 @@ a{color:inherit}a:hover{color:#fff}
 
 
 
-<a class="wa-fab" href="https://wa.me/5516996377918?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20needesign%20e%20quero%20conversar." target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
-<span class="wa-ic" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path><path d="M9.5 9.5c0 2.5 2.5 5 5 5l1-1.2-1.8-.9-.7.7c-.9-.4-1.7-1.2-2.1-2.1l.7-.7-.9-1.8z"></path></svg></span>
-<span class="wa-tx">Fale com a gente</span>
-</a>
+
+
 </div>
 
 </div>
