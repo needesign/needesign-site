@@ -5,6 +5,8 @@ class Component extends DCLogic {
 componentDidMount() {
 const h = (window.location.hash || '').replace('#case-', '');
 if (h && CASES.some((c) => c.id === h)) this.setState({ open: h });
+this._hash = () => { const k = (window.location.hash || '').replace('#case-', ''); if (k && CASES.some((c) => c.id === k)) this.setState({ open: k, lb: null }); };
+window.addEventListener('hashchange', this._hash);
 this._key = (e) => {
 const st = this.state || {};
 if (st.lb != null) {
